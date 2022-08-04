@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list tables and forms</title>
+</head>
+<!-- In body we have header , main and footer : in header we have nav , in footer nothing but in main we have section , div and span which is important -->
+<body>
+    <h1>All about list , tables and forms</h1>
+    <header>
+        <nav>
+            Home
+            about
+        </nav>
+    </header>
+    <hr>
+
+    <h3><u>Lists</u></h3>
+    <main>
+        <section>
+            this is a section
+        </section>
+        <hr>
+        <div>
+            <p>unordered list</p>
+            <ul type="circle">
+                <li>Home</li>
+                <li>about</li>
+                <li>contact</li>
+            </ul>
+            <p>Ordered list</p>
+            <ol type="i">
+                <li>Home</li>
+                <li>about</li>
+                <li>contact</li>
+            </ol>
+        </div>
+        <hr>
+
+        <h3><u>Tables</u></h3>
+        <div>
+            <table>
+                <caption><u>Score</u></caption>
+                <tr>
+                    <th>SL.no</th>
+                    <th>Name </th>
+                    <th>rool</th>
+                    <th colspan='3'>best</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>Virat kholi</td>
+                    <td>Batsman</td>
+                    <td>138</td>
+                    <td>98</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Hardik pandya</td>
+                    <td>All rounder </td>
+                    <td>93</td>
+                    <td>5</td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+
+        <h3><u>Form</u></h3>
+
+        <hr>
+        <div>
+            <p>Enter your name : <input type="text" placeholder="name"></p>
+            <hr>
+
+            <p>Choose the correct answer </p>
+            <label for="newid1">
+                <input type="radio" name="options" id="newid1"> Option 1
+            </label>
+            <label for="newid2">
+                <input type="radio" name="options" id="newid2"> Option 2
+            </label>
+            <label for="newid3">
+                <input type="radio" name="options" id="newid3"> Option 3
+            </label>
+            <label for="newid4">
+                <input type="radio" name="options" id="newid4"> Option 4
+            </label>
+            <hr>
+
+            <p>Where you have to go please select those</p>
+            <label for="place1">
+                <input type="checkbox" name="place" id="place1"> place 1
+            </label>
+            <label for="place2">
+                <input type="checkbox" name="place" id="place2"> place 2
+            </label>
+            <label for="place3">
+                <input type="checkbox" name="place" id="place3"> place 3
+            </label>
+            <label for="place4">
+                <input type="checkbox" name="place" id="place4"> palce 4
+            </label>
+            <hr>
+
+            <label for="area">
+                <textarea name="about" id="" cols="30" rows="10" placeholder="Tell me about your self" 
+                style="background: mistyrose"></textarea>
+            </label>
+            <hr>
+
+            <p>Which is your phone?</p>
+            Mobile :
+            <select name="moblie company" id="mobile">
+                <option value="No mobile">default</option>
+                <option value="Redmi">Redmi</option>
+                <option value="Poco">Poco</option>
+                <option value="One plus">One plus</option>
+                <option value="Apple">Apple</option>
+            </select>
+        </div>
+        <hr>
+        <span>
+            see a span by inspecting
+        </span>
+        <hr>
+    </main>
+
+    <footer>
+        this is a footer
+    </footer>
+    <hr>
+
+</body>
+
+</html>
