@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css selectors</title>
+    <!-- same css link as of index -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* div will be red because inline css has more pripority */
+        div{
+            background-color: yellow;
+        }
+        /* id selector */
+        #red,h3{
+            color: white;
+            background-color: red;
+        }
+        /* class selector */
+        .blue{
+            background-color: blue;
+            color: white;
+            border: 3px solid black;
+        }
+        /* universal selector */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* span is a element selector */
+        /* .cnew is a class selector */
+        /* #inew is a id selector */
+        .cnew{
+            background-color: aquamarine;
+            color: hotpink;
+        }
+        /* this is a element class selector */
+        /* this will apply for the paragraph having bluevioet class */
+        p.blueviolet{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: antiquewhite;">
+        <h1>This is my css selector page</h1>
+        <p class ="blueviolet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque labore odit commodi repudiandae nulla ad, officia quibusdam facere eius. Soluta accusamus, dolore at voluptatum alias voluptates illo excepturi tempora illum, odio culpa. Cum, reiciendis?</p><hr>
+        <p class="blueviolet">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, deserunt.
+        </p>
+        <h1>this is another h1</h1>
+        <div id="red">bg is red</div>
+        
+        <span class="blue">First tag</span>
+        <span class="blue red-rg">Second tag</span>
+        <span class="blue">Third tag</span>
+        <br>
+        <span class="cnew">
+            this is a span of class
+        </span>
+        <br>
+        <span id="inew" class="cnew">
+            this is a span of id inew and class cnew
+        </span>
+        <h3>
+            I am h3
+        </h3>
+    </div>
+</body>
+</html>

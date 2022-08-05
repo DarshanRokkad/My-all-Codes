@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first{
+            background-color: aqua;
+        }
+        /* link domainance */
+        .bg-blue{
+            background-color: blue;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- this and cssselector html files h1 will have same css styling link -->
+    <h1>
+        This is index html file
+    </h1>
+    <!-- inline css dominance -->
+    <div id="first" style="background-color: aqua;">
+        first
+    </div>
+    <div class="re">
+        red 1
+    </div>
+    <div id="second">
+        second
+    </div>
+    <!-- one element can have more than one class -->
+    <section class="red">
+        red 
+    </section>
+    <!-- one class can belong to more than one element  -->
+    <section class="red bg-blue border-purple">
+        red bg blue border purple
+    </section>
+</body>
+</html>
