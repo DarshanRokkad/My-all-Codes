@@ -1,0 +1,14 @@
+/* #first{
+    background-color: aqua;
+} */
+.bg-blue{
+    background-color: yellow;
+    color: black;
+}
+
+/* element selector */
+h1{
+    color: rgb(237, 28, 28);
+}
+
+/* the above two or off different html file  so we can add same css link to two or more different files*/
