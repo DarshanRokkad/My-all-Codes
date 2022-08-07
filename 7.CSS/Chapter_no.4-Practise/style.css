@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Upper one nav */
+.black{
+    height: 60px;
+    background-color: black;
+    color: white;
+}
+.header{
+    display: inline-block;
+    padding: 18px;
+}
+.black ul li a{
+    color: white;
+    text-decoration: none;
+}
+/* middle two div */
+.red{
+    height: 85vh;
+    width: 50%;
+    background-color: red;
+    color: white;
+    display: inline-block;
+}
+.green{
+    height: 85vh;
+    width: 50%;
+    background-color: green;
+    color: white;
+    display: inline-block ;
+}
+/* Footer */
+footer{
+    font-family:'Baloo Thambi 2', cursive;
+    text-transform: uppercase;
+}
+.center{
+    text-align: center;
+    padding: 20px;
+}
