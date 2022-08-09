@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    padding: 34px;
+}
+li{
+    list-style: none;
+    display: inline;
+    padding: 34px;
+}
+header{
+    font-variant: small-caps;
+    background-color: black;
+    color: white;
+}
+.left{
+    background-color: red;
+    height: 80vh;
+    width: 40vw;
+    float: left;
+}
+.right{
+    background-color: yellow; 
+    height: 80vh;
+    width: 40vw;
+    float: right;
+}
