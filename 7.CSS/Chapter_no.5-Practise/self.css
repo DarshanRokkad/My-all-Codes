@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: aqua;
+    height: 5vw;
+    font-size: 2.5vw;
+    font-weight: bold;
+    font-variant:small-caps;
+    position: sticky;
+    top: 0;
+}
+ul{
+    padding: 0.5vw;
+}
+li{
+    display: inline;
+    margin: 0 1vw;
+}
+.container{
+    background-color: palevioletred;
+    height: 2000px;
+    font-size: 2vw;
+    /* Comment the below and see the sticky nav bar change*/ 
+    position: relative;
+}
+.box{
+    background-color:darkmagenta;
+    height: 50vh;
+    width: 40vw;
+    margin: auto;
+}
+/* to make the text a little middle for and a little down to make text more better visible */
+p{
+    margin: 0 3vw;
+    padding-top: 20px;
+}
+.inli{
+    margin-left: 54vw;
+}

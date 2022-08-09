@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: black;
+    color: white;
+    padding: 0 0 0 50px;
+    position: sticky;
+    top: 0px;
+}
+li{
+    /* display: inline; */
+    list-style: circle outside;
+    font-size: 2vw;
+    padding: 0 13px;
+}
+.container{
+    min-height: 2333px;
+    background-color: red;
+    color: white;
+    position: relative;
+    z-index: 3;
+}
+.box{
+    background-color: white;
+    color: blue;
+    font-size: 2vw;
+    height: 50vh;
+    width: 40vw;
+    margin: auto;
+}
