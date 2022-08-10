@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: black;
+    color: white;
+    font-family: 'Rubik Marker Hatch', cursive;;
+    font-size: x-large;
+    font-variant: small-caps;
+    font-weight: bold;
+    /* very important */
+    display: grid;
+    grid-template-columns: auto auto;
+    /* doing sticky nav bar */
+    position: sticky;
+    top: 0;
+}
+ul{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: end;
+}
+img {
+    margin: 12px 44px;
+}
+li {
+    display: inline-grid;
+    list-style: none;
+    margin: 0 29px;
+    padding: 25px 0;
+}
+.continer{
+    background-color: plum;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    align-items: center;
+}
+.left{
+    background-color: blue;
+    height: 30vh;
+    width: 30vw;
+}
+.right{
+    background-color: yellow;
+    height: 30vh;
+    width: 30vw;
+}
