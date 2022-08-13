@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: black;
+    color: white;
+    height: 50px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+ul {
+    padding: 16px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    justify-content: end;
+}
+li {
+    list-style: none;
+    margin: 0 20px;
+}
+h1{
+    padding: 7px 30px;
+}
