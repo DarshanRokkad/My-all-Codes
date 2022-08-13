@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .progress {
+            background-color: red;
+            height: 3px;
+            animation: load 1s ease-in-out 1;
+        }
+        header {
+            height: 72px;
+            background-color: black;
+        }
+        main {
+            height: 899px;
+            background-color: blue;
+        }
+        img {
+            display: block;
+            margin: auto;
+        }
+        @keyframes load {
+            0% {
+                width: 0%;
+            }
+            60% {
+                width: 90vw;
+            }
+            100% {
+                width: 100vw;
+            }
+        }
+        /* @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        } */
+        @keyframes slide1 {
+            0% {transform: translate(-188vw);}
+            100% {transform: translate(88vw);}
+        }
+        @keyframes slide2 {
+            0% {transform: translate(-92vw);}
+            100% {transform: translate(94vw);}
+        }
+        @keyframes slide3 {
+            0% {transform: translate(0vw);}
+            100% {transform: translate(94vw);}
+        }
+        .slider {
+            background-color: white;
+            height: 520px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .img1 {
+            transform: translate(85vw);
+            animation: slide1 1s 2s forwards;
+        }
+        .img2 {
+            transform: translate(0vw);
+            animation: slide2 1s 2s forwards;
+        }
+        .img3 {
+            transform: translate(8vw);
+            animation: slide3 1s 2s forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress"></div>
+    <header></header>
+    <main>
+        <!-- <img src="/Chapter_no.8/fire-dragon-png-115534991342vycqahagw.png" alt="" width="222px"> -->
+        <div class="slider">
+            <img src="https://source.unsplash.com/collection/190727/1600x900" alt="" class="img1">
+            <img src="https://source.unsplash.com/collection/190727/1600x901" alt="" class="img2">
+            <img src="https://source.unsplash.com/collection/190727/1600x903" alt="" class="img3">
+        </div>
+    </main>
+</body>
+</html>
