@@ -4,8 +4,8 @@ answer2 = "My main career goal is to learn every day. I really want to learn and
 answer3 = " I don’t possess a good financial condition at this stage to afford for this course for the above-mentioned reasons. I don’t have enough money to invest in my education, I can invest only my time now."
 
 course = input("Enter the course name you are applying for financial aid : ")
-branch = input("Enter the bracch you are studing : ")
-
+branch = input("Enter the branch you are studing : ")
+branch = "Computer science and engineering"
 answer1 = answer1.replace("<|course name|>",course)
 answer2 = answer2.replace("<|branch name|>",branch)
 answer2 = answer2.replace("<|course name|>",course)
