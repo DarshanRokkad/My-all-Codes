@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Rubik+Marker+Hatch&family=Ultra&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+    transition: 0.5s;
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(42, 2, 2, 0.3),rgba(6, 59, 63, 0.3));
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header {
+    width: 84%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 6
+}
+
+img {
+    width: 120px;
+}
+
+.header ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+    position: relative;
+}
+
+.header ul li a {
+    font-family: 'Silkscreen', cursive;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.header ul li a::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -6px;
+    background-color: aqua;
+    position: absolute;
+    transition: 0.3s;
+}
+
+.header ul li a:hover::after {
+    width: 100%;
+}
+
+.content {
+    text-align: center;
+}
+
+.content h1 {
+    font-family: 'Carter One', cursive;
+    font-size: 140px;
+    color: white;
+    transition: 0.2s;
+}
+
+.content h1:hover {
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    color: transparent;
+}
+
+.content .play {
+    padding: 19px 60px;
+    border: 2px solid orangered;
+    color: white;
+    cursor: pointer;
+    border-radius: 50px;
+    background: none;
+    margin-top: 13px;
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 3px;
+    transition: 0.2s;
+}
+
+.content .play:hover {
+    padding: 21px 63px;
+    font-size: 25px;
+}
+
+.video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video {
+        width: auto;
+        height: 100%;
+    }
+}
