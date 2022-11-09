@@ -1,21 +1,14 @@
-#include <stdio.h> // header file for Standard Input Output
-#include <stdlib.h> // header file for Standard Library
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main() {
+int main()
+{
 
-    int G , S , A ,B ;
-    scanf("%d %d %d %d",&G,&S,&A,&B);
-    int gold_cost = G*A ;
-    int silver_cost= S*B;
-    if (gold_cost>=silver_cost)
+    if(printf("Hello world!"))
     {
-        printf("Gold");
-    }
-    else
-    {
-        printf("Silver");
+        printf(" Yaa this is true");
     }
 
-    //Your code here
     return 0;
 }
