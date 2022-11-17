@@ -1,0 +1,9 @@
+package javaprograms;
+
+public class DataTpye {
+	public static void main(String arg[])
+	{
+		System.out.println("Min of int : "+Byte.MIN_VALUE);
+		System.out.println("Min of int : "+Integer.MAX_VALUE);
+	}
+}

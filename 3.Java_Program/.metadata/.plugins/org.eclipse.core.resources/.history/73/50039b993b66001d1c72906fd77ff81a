@@ -1,0 +1,11 @@
+package javaprograms;
+
+public class Arithamatic {
+	public static void main(String arg[])
+	{
+		float a = 35f , b = 3f ;
+		float c = (float )a/b;
+		System.out.println(c);
+		
+	}
+}
