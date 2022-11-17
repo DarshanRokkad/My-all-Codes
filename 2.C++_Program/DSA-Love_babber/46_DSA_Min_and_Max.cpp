@@ -10,7 +10,7 @@ int getMax(int a[],int n )
     }
     return maxi;
 }
-int getMin(int a[],int n )
+int getmin(int a[],int n )
 {
     int mini = INT_MAX ;
     for(int i =0 ;i<n;i++)
@@ -31,7 +31,7 @@ int main()
         cin>>a[i];
     }
     int max = getMax(a,n);
-    int min = getMin(a,n);
+    int min = getmin(a,n);
     cout<<"The maximum element of the array : "<<max<<endl;
     cout<<"The minimum element of the array : "<<min<<endl;
   
