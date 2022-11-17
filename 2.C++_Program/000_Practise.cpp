@@ -1,16 +1,16 @@
-#include<iostream>
-#include<cstring>
+#include <iostream>
+#include<String>
 using namespace std;
+
 int main()
 {
-    string name = "darshan rokkad";
-    
-    int len = name.length();
-    cout<<len<<endl;
-    name.clear();
-    len = name.length();
-    cout<<len<<endl;
-    cout<<name.empty()<<endl;
+    string name ;
+    getline(cin,name);
+    string::iterator it ;
+    for(it =name.end()-1;it!= name.begin()-1;it--)
+    {
+        cout<<*it;
+    }
 
     return 0 ;
 }
