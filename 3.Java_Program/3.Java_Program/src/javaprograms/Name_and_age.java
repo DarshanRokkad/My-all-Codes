@@ -13,6 +13,7 @@ public class Name_and_age {
 		System.out.print("Enter your age : ");
 		int age = sc.nextInt();
 		
+		int n = name.convert
 		System.out.println("Your name is "+name+" and age is "+age);
 	}
 }
