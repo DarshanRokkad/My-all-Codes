@@ -26,7 +26,7 @@ public:
     int sum();
     float average();
     void reverse();
-    void liftshift();
+    void leftshift();
     void rightshift();
     void insertsorted(int x);
     void issorted();
@@ -186,7 +186,7 @@ void Array::dothis(int choic)
     break;
     case 15:
     {
-        liftshift();
+        leftshift();
     }
     break;
     case 16:
@@ -425,7 +425,7 @@ void Array::reverse()
     display();
 }
 // Left shift of an array
-void Array::liftshift()
+void Array::leftshift()
 {
     cout << "Array before lift shift : ";
     display();

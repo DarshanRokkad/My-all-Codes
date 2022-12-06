@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Secondlargest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int n;
 		System.out.println("Enter the number of elements of the array : ");
 		Scanner sc = new Scanner(System.in);
@@ -24,7 +23,8 @@ public class Secondlargest {
 		for (int i =0 ;i<n;i++)
 		{
 			if(arr[i]>max1)
-			{y
+			{
+				max2 = max1 ;
 				max1=arr[i];
 			}
 		}

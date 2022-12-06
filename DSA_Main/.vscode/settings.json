@@ -4,6 +4,12 @@
         "iostream": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "vector": "cpp",
+        "random": "cpp",
+        "functional": "cpp",
+        "sstream": "cpp",
+        "regex": "cpp",
+        "*.tcc": "cpp"
     }
 }
