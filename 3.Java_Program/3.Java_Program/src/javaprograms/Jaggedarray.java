@@ -1,7 +1,7 @@
 package javaprograms;
 
 import java.util.Scanner;
-// Jagged array in java
+// Jagged / ragged array in java
 public class Jaggedarray {
 	public static void main(String args[])
 	{

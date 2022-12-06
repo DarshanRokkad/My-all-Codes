@@ -1,5 +1,5 @@
 package javaprograms;
-// import java.lang.*;
+//import java.lang.*;
 // the above is like importing the library automatically importing
 import Java.lang.Object;
 
