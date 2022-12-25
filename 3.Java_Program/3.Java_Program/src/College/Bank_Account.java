@@ -7,10 +7,10 @@ class Account
 	String name;
 	int phone_no;
 	double balance_am;
+	Scanner sc = new Scanner(System.in);
 	void CreateAccount()
 	{
 		System.out.println("*****Creating account*****");
-		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter your account number : ");
 		account_no = sc.nextInt();
 		System.out.print("Enter your name : ");
@@ -23,7 +23,6 @@ class Account
 	void deposit()
 	{
 		System.out.println("****Deposit amount ****");
-		Scanner sc = new Scanner(System.in);
 		double deposit_amo ;
 		System.out.print("Enter amount you need to deposit : ");
 		deposit_amo = sc.nextDouble();
@@ -33,7 +32,6 @@ class Account
 	void withdraw()
 	{
 		System.out.println("****Withdram amount ****");
-		Scanner sc = new Scanner(System.in);
 		double withdram_amo ;
 		System.out.print("Enter amount you need to withdraw : ");
 		withdram_amo = sc.nextDouble();
