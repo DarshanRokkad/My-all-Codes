@@ -5,6 +5,10 @@ class Tv
 	public void switchon() {
 		System.out.println("Tv is on");
 	}
+	public void displayhi()
+	{
+		System.out.println("Hello frendz from base class");
+	}
 }
 class Smarttv extends Tv
 {
@@ -14,7 +18,8 @@ class Smarttv extends Tv
 	}
 	public void display()
 	{
-		System.out.println("Hello frendz");
+		super.displayhi();
+		System.out.println("Hello frendz from the derived class");
 	}
 }
 
@@ -27,6 +32,8 @@ public class Dynamic_method_dispatch {
 		
 		Smarttv st = new Smarttv();
 		st.switchon();
+		st.displayhi();
+		st.display();
 		
 		Tv s = new Smarttv();
 		s.switchon();

@@ -10,6 +10,10 @@
         "functional": "cpp",
         "sstream": "cpp",
         "regex": "cpp",
-        "*.tcc": "cpp"
-    }
+        "*.tcc": "cpp",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }

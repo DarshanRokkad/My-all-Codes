@@ -1,6 +1,6 @@
 package College;
-import java.util.Scanner;
 
+import java.util.Scanner;
 public class Binary_search {
 
 	public static void main(String[] args) {
@@ -40,5 +40,4 @@ public class Binary_search {
 			System.out.println(data+" is not present in the array.");
 		}
 	}
-
 }
