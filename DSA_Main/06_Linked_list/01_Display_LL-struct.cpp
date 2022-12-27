@@ -323,6 +323,25 @@ void reverse()
     head = q ;
 }
 
+int mid_element()
+{
+    struct Node *p , *q ;
+    p = q = head ;
+    while(q)
+    {
+        q=q->next ;
+        if(q)
+        {
+            q=q->next ;
+        }
+        if(q)
+        {
+            p=p->next ;
+        }
+    } 
+    return (p->data);
+}
+
 int main()
 {
     int a[] = {3, 5, 7, 10, 56};
@@ -415,6 +434,13 @@ int main()
     reverse();
     cout<<"After reversing a linked list : ";
     display(head);
+
+    // mid element of the linked list 
+    cout<<"Mid element of the linked list : "<<mid_element()<<endl;
+    cout<<"linked list after inserting 30 : ";
+    insert(head , 30,3);
+    display(head);
+    cout<<"Mid element of the linked list : "<<mid_element()<<endl;
 
     return 0;
 }
