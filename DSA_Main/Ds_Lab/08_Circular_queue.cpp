@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-template <class T>
+template<class T>
 class MyQueue
 {
 private:
@@ -17,8 +17,8 @@ public:
     {
         capacity = n;
         size = 0;
-        front = 0;
-        rear = capacity - 1;
+        front = -1;
+        rear = -1;
         a = new T[n];
     }
 
@@ -36,16 +36,15 @@ public:
     {
         if (isFull())
         {
-            cout << "Queue is full." << endl;
-            cout << endl;
+            cout << "Queue is full." << endl<<endl;
         }
         else
         {
-            if (size == 0)
+            if(front==-1)
             {
                 front++;
             }
-            cout << x << " is enqued to array." << endl;
+            cout<<x<<" is enqued to array."<<endl;
             rear = (rear + 1) % capacity;
             a[rear] = x;
             size++;
@@ -57,20 +56,38 @@ public:
     {
         if (isEmpty())
         {
-            cout << "Queue is empty." << endl;
-            cout << endl;
+            cout << "Queue is empty." << endl<<endl; 
         }
         else
         {
-            cout << a[front] << " is dequed from array." << endl;
+            cout<<a[front]<<" is dequed from array."<<endl;
             front = (front + 1) % capacity;
             size--;
-            if (size == 0)
-            {
-                front = -1;
-                rear = -1;
-            }
             display();
+        }
+    }
+
+    int getFront()
+    {
+        if (isEmpty())
+        {
+            return -1;
+        }
+        else
+        {
+            return front;
+        }
+    }
+
+    int getRear()
+    {
+        if (isEmpty())
+        {
+            return -1;
+        }
+        else
+        {
+            return rear;
         }
     }
 
@@ -79,47 +96,47 @@ public:
         if (size == 0)
         {
             cout << "Array is empty." << endl;
-            cout << endl;
         }
         else
         {
             cout << "Circular queue : ";
-            int i = front;
-            int j = (rear + 1) % capacity;
+            int f = front;
+            int r = (rear + 1) % capacity;
             do
             {
-                cout << a[i] << " ";
-                i = (i + 1) % capacity;
-            } while (i != j);
+                cout << a[f] << " ";
+                f = (f + 1) % capacity;
+            } while (f != r);
             cout << endl;
         }
-        cout << "Front : " << front << endl;
-        cout << "Rear : " << rear << endl;
+        cout<<"Size : "<<size<<endl;
+        cout << "Front : " << getFront() << endl;
+        cout << "Rear : " << getRear() << endl;
         cout << endl;
     }
 };
 
 int main()
 {
-    MyQueue<int> q(5);
+    MyQueue<char> q(5);
 
-    cout << "Queue is empty: " << q.isEmpty() << endl
-         << endl;
-    q.enque(7);
-    q.enque(45);
-    q.enque(1);
-    q.enque(9);
-    q.enque(17);
-    q.enque(3);
+    cout << "Queue is empty: " << q.isEmpty() << endl <<endl;
+    q.enque('a');
+    q.enque('b');
+    q.enque('c');
+    q.enque('d');
+    q.enque('e');
+    q.enque('f');
 
     q.deque();
     q.deque();
     q.deque();
     q.deque();
     q.deque();
-    q.enque(23);
-    q.enque(56);
-    q.enque(13);
+    q.deque();
+    q.enque('g');
+    q.enque('h');
+    q.enque('i');
 
     return 0;
 }

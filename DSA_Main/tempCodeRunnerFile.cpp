@@ -1,1 +1,1 @@
-cout<<s.top();
+char const
