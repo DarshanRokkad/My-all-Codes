@@ -66,7 +66,11 @@ public:
 
     void display()
     {
-        if (size != 0)
+        if (size == 0)
+        {
+            cout << "Array is empty" << endl;
+        }
+        else
         {
             cout << "Array : ";
             for (int i = 0; i < size; i++)
@@ -74,10 +78,6 @@ public:
                 cout << a[i] << " ";
             }
             cout << endl;
-        }
-        else
-        {
-            cout << "Array is empty" << endl;
         }
     }
 

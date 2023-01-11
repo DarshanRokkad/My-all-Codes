@@ -66,8 +66,6 @@ public:
         if (top == (Capacity - 1))
         {
             cout << "Overflow condition." << endl;
-            cout << "Stack is full." << endl;
-            cout << "You cannot push new book." << endl;
         }
         else
         {
@@ -82,8 +80,6 @@ public:
         if (top == -1)
         {
             cout << "Underflow condition." << endl;
-            cout << "Stack is empty." << endl;
-            cout << "There is no books." << endl;
             Book n;
             return n;
         }

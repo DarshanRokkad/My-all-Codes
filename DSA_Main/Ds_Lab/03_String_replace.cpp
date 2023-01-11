@@ -1,114 +1,91 @@
-// String replacing problem
-/*
-Design a Program in C++ for the following operations on Strings.
-a. Read a main String (STR), a Pattern String (PAT) and a Replace String (REP)
-b. Perform Pattern Matching Operation: Find and Replace all occurrences
-of PAT in STR with REP if PAT exists in STR. Report suitable messages in case
-PAT does not exist in STR
-(Note: Do not use built-in functions)
-*/
-#include <iostream>
+#include<iostream>
 #include <string>
 using namespace std;
+bool patternFound;  
 
-class String
-{
-private:
+class MyClass {
+
+    private: 
     string str;
-    string ptr;
-    string rep;
-    int start = 0, patfound = 0;
-    int lasts, lastp, lastr;
+    string replace;
+    string replaceWith;
 
-public:
-    String()
-    {
-        getString();
-        getswap();
-        replacePattern();
-    }
-    void getString()
-    {
-        cout << "Enter the string : ";
-        cin >> str;
+    public:
+
+    void getStrings() {
+
+        cout<<"Enter the string : ";
+        cin>> str;
     }
 
-    void getswap()
-    {
-        cout << "Enter the pattern to replace : ";
-        cin >> ptr;
-        cout << "Enter the string to replace : ";
-        cin >> rep;
-    }    
-    void findpattern()
-    {
-        int i, j, inmatch;
-        lasts = str.length() - 1;
-        lastp = ptr.length() - 1;
-        for (int endmatch = lastp; endmatch <= lasts; endmatch++, start++)
-        {
-            if (str[endmatch] == ptr[lastp])
-            {
-                inmatch = start;
-                j = 0;
-                while (j < lastp)
-                {
-                    if (str[inmatch] == ptr[j])
-                    {
-                        inmatch++;
-                        j++;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                if (j == lastp)
-                {
-                    patfound = 1;
-                    replacePattern();
-                }
-            }
-        }
-        if (patfound == 0)
-        {
-            cout << "The pattern is not found in the main string." << endl;
-        }
-        else
-        {
-            cout << "The string after pattern match and replace is " << str << endl;
-        }
+    void getReplaceStrings() {
+        cout<<"Enter the pattern string : ";
+        cin>>replace;
+
+        cout<<"Enter the string to be replaced with: " ;
+        cin>>replaceWith;
     }
-    void replacePattern()
+
+    string ptrreplace(int start)
     {
-        int i, j;
-        lastr = rep.length() - 1;
-        cout << "String replace length is " << lastr + 1 << endl;
-        if (lastp != lastr)
+        string temp , ans;
+        for(int i = start+replace.length();str[i]!='\0';i++)
         {
-            cout << "Invalid length of replace string." << endl;
-            exit(0);
+            temp+=str[i];
         }
-        else
+        replaceWith+=temp;
+        for(int i = 0 ; i<start;i++)
         {
-            i = start;
-            for (j = 0; j <= lastr; j++)
-            {
-                str[i] = rep[j];
-                i++;
+            ans+=str[i];
+        }
+        ans+=replaceWith;
+        return ans ;
+    }
+
+    string patternReplace() {
+
+         // loop to traverse through the string: 
+        for(int i = 0; i<str.length(); i++) {
+
+            string temp = "";
+
+            // created a check to prevent the index out of bound
+            if(i > str.length() - replace.length()) {
+                break;
             }
+
+            // inner loop to find the pattern in the string: 
+            for(int j = i; j< replace.length() + i; j++) {
+                temp = temp + str[j];            
+            }
+            // checks the pattern matching: 
+            if(temp == replace) {
+
+                patternFound = true;
+                str = ptrreplace(i);
+            } 
+  
         }
-        return;
+        return str;
     }
 };
 
-int main()
-{
-    String s;
-    string str;
-    s.getString();
-    s.getswap();
-    s.findpattern();
+int main() {
 
+    MyClass c1;
+
+    c1.getStrings();
+    c1.getReplaceStrings();
+
+    string result = c1.patternReplace();
+
+    if(patternFound) {
+
+        cout<<"Edited string is:  " <<result<<endl;
+
+    } else {
+
+        cout<<"No such string is found."<<endl;
+    }
     return 0;
 }

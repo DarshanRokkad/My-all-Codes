@@ -164,7 +164,7 @@ public:
             node *temp = head;
             while (temp)
             {
-                cout << "Student " << temp->usn;
+                cout << "Student " << temp->name;
                 c++;
                 temp = temp->next;
                 if (temp)
