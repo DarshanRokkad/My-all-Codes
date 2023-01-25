@@ -1,57 +1,64 @@
 package practise;
 
-class cell_phone
+class Atms
 {
-	private String phone ;
-	private long ime ;
-	public cell_phone()
+	int amount ;
+	boolean atm_empty = true ;
+	synchronized public void set(int v)
 	{
-		phone = "sumsun";
-		ime = 45651231;
+		while(atm_empty!=true)
+			try { wait(); } catch(Exception e) {}
+		amount = v ;
+		atm_empty = false ;
+		notify();
 	}
-	public cell_phone(String phone , long ime )
+	
+	synchronized public int get()
 	{
-		this.phone = phone ;
-		this.ime = ime ;
-	}
-	void call()
-	{
-		System.out.println("Calling ");
-	}
-	void savecontact()
-	{
-		System.out.println("Save sms");
-	}
-	void deletecontact()
-	{
-		System.out.println("Delete contact");
+		while(atm_empty!=false)
+			try { wait(); } catch(Exception e) {}
+		int x = amount ;
+		atm_empty = true ;
+		notify();
+		return x;
 	}
 }
 
-class smart_phone extends cell_phone
+class Banks extends Thread 
 {
-	private String mac;
-	public smart_phone()
+	Atms a ;
+	Banks(Atms at){ a = at ; }
+	public void run()
 	{
-		mac = "900";
-	}
-	public smart_phone(String n)
-	{
-		mac = n ;
-	}
-	void play()
-	{
-		System.out.println("Play the song ");
-	}
-	void capture()
-	{
-		System.out.println("Take photo");
+		int times = 1 ;
+		while(true) {
+			a.set(times);
+			System.out.println("Bank filling money : "+times+'\n');
+			times++;
+		}
 	}
 }
 
-public class Example {
-	public static void main(String[] args) {
-		
-
+class Customers extends Thread 
+{
+	Atms a ;
+	Customers(Atms at){ a = at ; }
+	public void run()
+	{
+		while(true) {
+			System.out.println("Customer is consuming money : "+a.get()+'\n');
+		}
 	}
+}
+
+public class Example 
+{
+	public static void main(String args[])
+	{
+		Atms atm = new Atms();
+		Banks sbi = new Banks(atm);
+		Customers sbiCustomer = new Customers(atm);
+		sbi.start();
+		sbiCustomer.start();		
+	}	
 }

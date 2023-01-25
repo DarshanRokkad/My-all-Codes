@@ -6,12 +6,12 @@ struct Node
 {
     int data;
     struct Node *next;
-} *head = nullptr;
+} *head = NULL;
 
 int count(struct Node *p)
 {
     int c = 0;
-    while (p != nullptr)
+    while (p != NULL)
     {
         c++;
         p = p->next;
@@ -53,7 +53,7 @@ void insert(struct Node *p, int ele, int ind)
 
 void display(struct Node *p)
 {
-    while (p != nullptr)
+    while (p != NULL)
     {
         // printing the data
         cout << p->data << " ";

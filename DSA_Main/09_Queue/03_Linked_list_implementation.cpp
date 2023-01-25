@@ -2,149 +2,113 @@
 #include <iostream>
 using namespace std;
 
+template <class t>
 class node
 {
-public:
-    int data;
-    node *next;
+    t data;
+    node<t> *next;
 
-    node(int x)
+public:
+    template <class>
+    friend class MyQueue;
+    node(t x)
     {
         data = x;
-        next = nullptr;
+        next = NULL;
     }
 };
 
+template <class t>
 class MyQueue
 {
 private:
-    int rear;
-    int size;
-    node *head = nullptr;
-    node *last = nullptr;
+    node<t> *front;
+    node<t> *rear;
 
 public:
     MyQueue()
     {
-        rear = -1;
-        size = 0;
+        front = NULL;
+        rear = NULL;
     }
 
-    void enque(int x)
+    void enque(t x)
     {
-        node *temp = new node(x);
-        // when no node is present
-        if (size == 0)
+        cout << x << " is enqueued to queue." << endl;
+        node<t> *temp = new node<t>(x);
+        if (isEmpty())
         {
-            last = head = temp;
+            rear = front = temp;
         }
-        // when some nodes are present
         else
         {
-            last->next = temp;
-            last = last->next;
+            rear->next = temp;
+            rear = rear->next;
         }
-        rear++;
-        size++;
     }
 
-    int deque()
+    void deque()
     {
-        if (size == 0)
+        if (isEmpty())
         {
             cout << "No nodes." << endl;
-            return -1;
         }
         else
         {
-            int data = head->data;
-
-            node *temp = head;
-            head = head->next;
+            cout << front->data << " is dequed from the queue." << endl;
+            node<t> *temp = front;
+            front = front->next;
             delete temp;
-            if (!head)
-                last = nullptr;
-
-            rear--;
-            size--;
-            return data;
+            if (!front)
+                rear = NULL;
         }
     }
 
     bool isEmpty()
     {
-        return (size == 0);
-    }
-
-    int getFront()
-    {
-        if (size == 0)
-        {
-            return -1;
-        }
-        else
-        {
-            return 0;
-        }
-    }
-
-    int getRear()
-    {
-        return rear;
-    }
-
-    int getSize()
-    {
-        return size;
+        return (!front);
     }
 
     void display()
     {
-        if (size == 0)
+        if (isEmpty())
         {
             cout << "Empty Queue." << endl;
         }
         else
         {
-            cout<<"Queue : ";
-            node *temp = head;
-            for (int i = 0; i < size; i++)
+            cout << "Queue : ";
+            node<t> *temp = front;
+            while (temp)
             {
-                cout << temp->data;
-                if(temp->next)
-                    cout << " <-- ";
+                cout << temp->data << " ";
                 temp = temp->next;
-            }cout<<endl;
+            }
+            cout << endl<<endl;
         }
     }
 };
 
 int main()
 {
-    MyQueue q;
-
-    cout << "Queue is empty: " << q.isEmpty() << endl;
-    q.enque(7);
-    q.enque(45);
-
-    q.enque(1);
-    cout << "Front and rear after 3 enque : " << q.getFront() << " " << q.getRear() << endl;
-
+    MyQueue<int> q;
+    q.enque(5);
+    q.enque(6);
     q.enque(9);
-    cout << "Size of queue after enque 4 elements : " << q.getSize() << endl;
-
-    q.enque(17);
-    q.enque(3);
+    q.enque(45);
     q.display();
 
-    cout << q.deque() << endl;
-    cout << q.deque() << endl;
-    cout << q.deque() << endl;
-    cout << q.deque() << endl;
-    cout << q.deque() << endl;
-    cout << q.deque() << endl;
-    cout << "Front and rear after all dequeue : " << q.getFront() << " " << q.getRear() << endl;
-    cout << "Queue is empty: " << q.isEmpty() << endl;
+    q.deque();
+    q.display();
+
+    q.deque();
+    q.display();
+
+    q.deque();
+    q.display();
+
+    q.deque();
+    q.display();
 
     return 0;
 }

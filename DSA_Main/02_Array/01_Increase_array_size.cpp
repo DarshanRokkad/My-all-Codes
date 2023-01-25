@@ -23,9 +23,9 @@ int main()
     // assign new array 
     p = q ;
     // new pointer is 0
-    q = nullptr;
+    q = NULL;
     // deleting the old pointer new array also 
-    p = nullptr;
+    p = NULL;
 
     return 0 ;
 }

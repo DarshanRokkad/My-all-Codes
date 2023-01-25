@@ -7,6 +7,7 @@ negative single digit operands and binary operators. The operators are +, -,
 
 #include <iostream>
 #include <stack>
+#include<math.h>
 using namespace std;
 
 class check
@@ -43,7 +44,7 @@ public:
             result = x / y;
             break;
         case '^':
-            result = x ^ y;
+            result = pow(x,y);
             break;
         }
         return result;

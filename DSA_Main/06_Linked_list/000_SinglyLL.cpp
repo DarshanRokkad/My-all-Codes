@@ -10,7 +10,7 @@ public:
     node(int x)
     {
         data = x;
-        next = nullptr;
+        next = NULL;
     }
 };
 
@@ -22,19 +22,19 @@ private:
 public:
     singlyLinkedlist()
     {
-        head = nullptr;
+        head = NULL;
     }
     void insert(int x)
     {
         node *temp = new node(x);
-        if (head == nullptr)
+        if (head == NULL)
         {
             head = temp;
         }
         else
         {
             node *p = head;
-            while (p->next != nullptr)
+            while (p->next != NULL)
             {
                 p = p->next;
             }
@@ -44,7 +44,7 @@ public:
     }
     void dispaly()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             cout << "Linked list is empty." << endl;
         }

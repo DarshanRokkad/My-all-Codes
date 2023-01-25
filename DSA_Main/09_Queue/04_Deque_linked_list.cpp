@@ -10,9 +10,9 @@ public:
     node *next;
     node(int x)
     {
-        prev = nullptr;
+        prev = NULL;
         data = x;
-        next = nullptr;
+        next = NULL;
     }
 };
 
@@ -27,8 +27,8 @@ public:
     MyDeque()
     {
         size = 0;
-        head = nullptr;
-        last = nullptr;
+        head = NULL;
+        last = NULL;
     }
     void insertFront(int x)
     {
@@ -70,7 +70,7 @@ public:
         {
             node *temp = head;
             head = head->next;
-            head->prev = nullptr;
+            head->prev = NULL;
             delete temp;
             size--;
         }
@@ -85,7 +85,7 @@ public:
         {
             node *temp = last;
             last = last->prev;
-            last->next = nullptr;
+            last->next = NULL;
             delete temp;
             size--;
         }

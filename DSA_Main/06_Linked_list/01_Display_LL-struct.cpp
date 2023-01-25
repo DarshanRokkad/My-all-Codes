@@ -5,9 +5,9 @@ struct Node
 {
     int data;
     struct Node *next;
-} *head = nullptr, *first = head, *laste = nullptr;
+} *head = NULL, *first = head, *laste = NULL;
 // it is now just like a pointer holding nothing
-// both NULL and nullptr works in c++
+// both NULL and NULL works in c++
 
 void create(int a[], int n)
 {
@@ -17,7 +17,7 @@ void create(int a[], int n)
     // creating first node
     head = new Node;
     head->data = a[0];
-    head->next = nullptr;
+    head->next = NULL;
     // to traverse through linked list we are assigning the first node
     last = head;
 
@@ -27,7 +27,7 @@ void create(int a[], int n)
         // creating new node
         t = new Node;
         t->data = a[i];
-        t->next = nullptr;
+        t->next = NULL;
         last->next = t;
         last = t;
     }
@@ -36,7 +36,7 @@ void create(int a[], int n)
 // display the linked list
 void display(struct Node *p)
 {
-    while (p != nullptr)
+    while (p != NULL)
     {
         // printing the data
         cout << p->data << " ";
@@ -49,7 +49,7 @@ void display(struct Node *p)
 // displaying the linked list in the reverse order - recurively
 void reverse_display(struct Node *r)
 {
-    if (r == nullptr)
+    if (r == NULL)
     {
         return;
     }
@@ -61,7 +61,7 @@ void reverse_display(struct Node *r)
 int count(struct Node *p)
 {
     int c = 0;
-    while (p != nullptr)
+    while (p != NULL)
     {
         c++;
         p = p->next;
@@ -73,7 +73,7 @@ int count(struct Node *p)
 int sum(struct Node *p)
 {
     int sum = 0;
-    while (p != nullptr)
+    while (p != NULL)
     {
         sum += p->data;
         p = p->next;
@@ -85,7 +85,7 @@ int sum(struct Node *p)
 int max(struct Node *p)
 {
     int max = INT_MIN;
-    while (p != nullptr)
+    while (p != NULL)
     {
         if (p->data > max)
         {
@@ -100,7 +100,7 @@ int max(struct Node *p)
 int min(struct Node *p)
 {
     int min = INT_MAX;
-    while (p != nullptr)
+    while (p != NULL)
     {
         if (p->data < min)
         {
@@ -114,8 +114,8 @@ int min(struct Node *p)
 // linear search of a key and returning of the address of the element i.e returning the address of the paticular node
 struct Node *linear_search(struct Node *p, int key)
 {
-    struct Node *q = nullptr;
-    while (p != nullptr)
+    struct Node *q = NULL;
+    while (p != NULL)
     {
         if (p->data == key)
         {
@@ -128,7 +128,7 @@ struct Node *linear_search(struct Node *p, int key)
         q = p;
         p = p->next;
     }
-    return nullptr;
+    return NULL;
 }
 
 void insert(struct Node *p, int ele, int ind)
@@ -168,8 +168,8 @@ void insertLast(struct Node *p, int e)
 {
     struct Node *t = new struct Node;
     t->data = e;
-    t->next = nullptr;
-    if (p == nullptr)
+    t->next = NULL;
+    if (p == NULL)
     {
         first = laste = t;
     }
@@ -183,9 +183,9 @@ void insertLast(struct Node *p, int e)
 void find_last()
 {
     laste = head;
-    while (laste != nullptr)
+    while (laste != NULL)
     {
-        if (laste->next == nullptr)
+        if (laste->next == NULL)
         {
             break;
         }
@@ -196,12 +196,12 @@ void find_last()
 void sort_insert(int x)
 {
     struct Node *p = head;
-    struct Node *q = nullptr;
+    struct Node *q = NULL;
     struct Node *t = new struct Node;
     t->data = x;
-    t->next = nullptr;
+    t->next = NULL;
     // head there is no node
-    if (head == nullptr)
+    if (head == NULL)
     {
         head = t;
     }
@@ -214,7 +214,7 @@ void sort_insert(int x)
         }
         // if first node data is the less one then we should insert the new data before first node
         // or the below can also be written as if(p==head)
-        if (q == nullptr)
+        if (q == NULL)
         {
             t->next = head;
             head = t;
@@ -245,7 +245,7 @@ int delete_node(int pos)
         else
         {
             p = head;
-            q = nullptr;
+            q = NULL;
             // moving pointer to the position
             for (int i = 1; i < pos; i++)
             {
@@ -309,9 +309,9 @@ void reverse()
 {
     struct Node *p, *q, *r;
     p = head;
-    q = nullptr;
-    r = nullptr;
-    while(p!=nullptr)
+    q = NULL;
+    r = NULL;
+    while(p!=NULL)
     {
         // sliding pointers
         r = q ;
@@ -377,7 +377,7 @@ int main()
     struct Node *ans = linear_search(head, key);
     key = 3;
     ans = linear_search(head, key);
-    if (ans == nullptr)
+    if (ans == NULL)
     {
         cout << key << " is not present in the linked list" << endl;
     }

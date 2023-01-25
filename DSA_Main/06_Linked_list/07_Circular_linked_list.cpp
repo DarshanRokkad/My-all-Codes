@@ -39,7 +39,7 @@ void display()
 int length()
 {
     int len = 0 ;
-    if(head==nullptr)
+    if(head==NULL)
     {
         return 0 ;
     }
@@ -79,7 +79,7 @@ void insert(int pos, int x)
     t->data = x;
     if (pos == 0)
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             head = t;
             head->next = head;
@@ -127,7 +127,7 @@ int delete_node(int pos)
         if (p == head)
         {
             delete head;
-            head = nullptr;
+            head = NULL;
         }
         else
         {

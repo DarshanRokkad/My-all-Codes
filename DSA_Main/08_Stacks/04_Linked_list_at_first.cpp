@@ -1,106 +1,119 @@
-// Linked list implementation of stack at head
-// i.e insert at the head and delete at the head not at the end
+// Linked list implementation of stack at top
+// i.e insert at the top and delete at the top not at the end
 #include <iostream>
 using namespace std;
 
 template <class T>
 class node
 {
-public:
+private:
     T data;
     node *next;
+
+public:
+    template <class>
+    friend class MyStack;
     node(T x)
     {
         data = x;
-        next = nullptr;
+        next = NULL;
     }
 };
-node<int> *head = nullptr;
 
 template <class T>
 class MyStack
 {
 private:
-    int top;
-    int Capacity;
+    node<T> *top;
 
 public:
-    MyStack(int n)
+    MyStack()
     {
-        top = -1;
-        Capacity = n;
+        top = NULL;
     }
 
     void push(T x)
     {
-        if (top == (Capacity - 1))
-        {
-            cout << "Stack is full." << endl;
-        }
-        else
-        {
-            node<int> *temp = new node<int>(x);
-            temp->next = head;
-            head = temp;
-            top++;
-        }
+        cout << x << " is pushed to stack." << endl;
+        node<int> *temp = new node<int>(x);
+        temp->next = top;
+        top = temp;
     }
 
-    T pop()
+    void pop()
     {
-        if (top == -1)
+        if (isEmpty())
         {
             cout << "Stack is empty." << endl;
-            return -1;
         }
         else
         {
-            T res = head->data;
-            node<int> *p = head;
-            head = head->next;
+            cout << top->data << " is poped from stack." << endl;
+            T res = top->data;
+            node<int> *p = top;
+            top = top->next;
             delete p;
-            top--;
-            return res;
         }
     }
 
     T peek()
     {
-        if (top == -1)
+        if (isEmpty())
         {
             cout << "Stack is empty" << endl;
             return -1;
         }
         else
         {
-            return (head->data);
+            return (top->data);
+        }
+    }
+
+    void display()
+    {
+        if (isEmpty())
+        {
+            cout << "Stack is empty." << endl;
+        }
+        else
+        {
+            cout << "Stack : " << endl;
+            node<int> *p = top;
+            while (p)
+            {
+                cout << p->data << endl;
+                p = p->next;
+            }
+            cout << endl;
         }
     }
 
     bool isEmpty()
     {
-        return (head == nullptr);
-    }
-
-    int size()
-    {
-        return (top + 1);
+        return (top == NULL);
     }
 };
 
 int main()
 {
-    MyStack<int> s(3);
+    MyStack<int> s;
     s.push(5);
     s.push(6);
     s.push(9);
     s.push(45);
-    cout << "Size : " << s.size() << endl;
-    cout << s.pop() << " is poped." << endl;
-    cout << "peek : " << s.peek() << endl;
-    cout << s.pop() << " is poped." << endl;
-    cout << s.pop() << " is poped." << endl;
-    cout << s.pop() << " is poped." << endl;
+    s.display();
+
+    s.pop();
+    s.display();
+
+    s.pop();
+    s.display();
+
+    s.pop();
+    s.display();
+
+    s.pop();
+    s.display();
 
     return 0;
 }

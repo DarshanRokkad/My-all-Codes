@@ -8,7 +8,7 @@ public:
     node(t x)
     {
         data = x;
-        prev = next = nullptr;
+        prev = next = NULL;
     }
 };
 
@@ -21,13 +21,13 @@ private:
 public:
     MyStack()
     {
-        head = last = nullptr;
+        head = last = NULL;
     }
 
     void push(t x)
     {
         node<t> *p = new node<t>(x);
-        if (head == nullptr)
+        if (head == NULL)
         {
             last = head = p;
         }
@@ -45,7 +45,7 @@ public:
         {
             node<t> *p = last,*res = last;
             last = last->prev;
-            last->next = nullptr ;
+            last->next = NULL ;
             delete p ;
         }
     }
@@ -64,6 +64,6 @@ public:
 
     bool isEmpty()
     {
-        return (head == nullptr);
+        return (head == NULL);
     }
 };

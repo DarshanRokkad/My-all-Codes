@@ -7,15 +7,15 @@ struct node
     struct node *prev;
     int data;
     struct node *next;
-} *head = nullptr;
+} *head = NULL;
 
 void create(int a[], int n)
 {
     struct node *t, *p;
     head = new node;
-    head->prev = nullptr;
+    head->prev = NULL;
     head->data = a[0];
-    head->next = nullptr;
+    head->next = NULL;
     p = head;
     for (int i = 1; i < n; i++)
     {
@@ -23,7 +23,7 @@ void create(int a[], int n)
         p->next = t;
         t->prev = p;
         t->data = a[i];
-        t->next = nullptr;
+        t->next = NULL;
         p = t;
     }
 }
@@ -32,7 +32,7 @@ int length()
 {
     int len = 0;
     struct node *p = head;
-    while (p != nullptr)
+    while (p != NULL)
     {
         len++;
         p = p->next;
@@ -43,12 +43,12 @@ int length()
 void display()
 {
     struct node *p = head;
-    if (p == nullptr)
+    if (p == NULL)
     {
         cout << "No linked list" << endl;
         return;
     }
-    while (p != nullptr)
+    while (p != NULL)
     {
         cout << p->data << " ";
         p = p->next;
@@ -66,7 +66,7 @@ void insert(int x, int ind)
     if (ind == 0)
     {
         t = new struct node;
-        t->prev = nullptr;
+        t->prev = NULL;
         t->data = x;
         t->next = head;
         head->prev = t;
@@ -111,7 +111,7 @@ void delete_node(int pos)
         // if head is not pointing null then
         if (head)
         {
-            head->prev = nullptr;
+            head->prev = NULL;
         }
         delete p;
     }
@@ -133,13 +133,13 @@ void delete_node(int pos)
 void reverse()
 {
     struct node *p = head ,*t;
-    while(p!=nullptr)
+    while(p!=NULL)
     {
         t = p->next ;
         p->next = p->prev;
         p->prev = t;
         p = p->prev;
-        if(p!=nullptr && p->next==nullptr)
+        if(p!=NULL && p->next==NULL)
         {
             head = p;
         }

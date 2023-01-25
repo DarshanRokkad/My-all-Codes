@@ -18,7 +18,8 @@
         "initializer_list": "cpp",
         "utility": "cpp",
         "valarray": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "ratio": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

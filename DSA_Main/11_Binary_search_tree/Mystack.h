@@ -9,7 +9,7 @@ public:
     dnode(t x)
     {
         data = x;
-        prev = next = nullptr;
+        prev = next = NULL;
     }
 };
 template <class t>
@@ -22,12 +22,12 @@ private:
 public:
     Mystack()
     {
-        last = head = nullptr;
+        last = head = NULL;
     }
     void push(t p)
     {
         dnode<t> *temp = new dnode<t>(p);
-        if (head == nullptr)
+        if (head == NULL)
         {
             head = last = temp;
         }
@@ -40,9 +40,9 @@ public:
     }
     t top()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
-            return nullptr;
+            return NULL;
         }
         else
         {
@@ -51,25 +51,25 @@ public:
     }
     void pop()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             return;
         }
         if (head == last)
         {
             delete head;
-            head = last = nullptr;
+            head = last = NULL;
         }
         else
         {
             last = last->prev;
             delete last->next;
-            last->next = nullptr;
+            last->next = NULL;
         }
     }
     bool empty()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             return true;
         }

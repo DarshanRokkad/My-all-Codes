@@ -5,7 +5,7 @@ struct node
 {
     int data;
     struct node *next;
-} *head = nullptr;
+} *head = NULL;
 
 void create(int a[], int n)
 {
@@ -15,7 +15,7 @@ void create(int a[], int n)
     // creating first node
     head = new node;
     head->data = a[0];
-    head->next = nullptr;
+    head->next = NULL;
     // to traverse through linked list we are assigning the first node
     last = head;
 
@@ -25,7 +25,7 @@ void create(int a[], int n)
         // creating new node
         t = new node;
         t->data = a[i];
-        t->next = nullptr;
+        t->next = NULL;
         last->next = t;
         last = t;
     }
@@ -34,7 +34,7 @@ void create(int a[], int n)
 int count(struct node *p)
 {
     int c = 0;
-    while (p != nullptr)
+    while (p != NULL)
     {
         c++;
         p = p->next;
@@ -44,7 +44,7 @@ int count(struct node *p)
 
 void display(struct node *p)
 {
-    while (p != nullptr)
+    while (p != NULL)
     {
         // printing the data
         cout << p->data << " ";
@@ -62,7 +62,7 @@ bool isLoop(struct node *f)
     {
         p = p->next;
         q = q->next;
-        q = (q != nullptr) ? q->next : nullptr;
+        q = (q != NULL) ? q->next : NULL;
     } while (p && q && p != q);
     return (p == q) ? true : false;
 }

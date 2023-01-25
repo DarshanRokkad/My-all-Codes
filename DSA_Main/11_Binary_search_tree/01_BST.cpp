@@ -12,7 +12,7 @@ public:
     treeNode(int x)
     {
         data = x;
-        lchild = rchild = nullptr;
+        lchild = rchild = NULL;
     }
 };
 
@@ -24,7 +24,7 @@ private:
 public:
     BinarySearchTree()
     {
-        root = nullptr;
+        root = NULL;
     }
 
     // this will create a binary tree until user gives -1 for the nodes
@@ -159,7 +159,7 @@ public:
     void iinsert(int key)
     {
         treeNode *f = root;
-        treeNode *t = nullptr;
+        treeNode *t = NULL;
         while (f)
         {
             t = f;
@@ -272,16 +272,16 @@ public:
     {
         if (!p)
         {
-            return nullptr;
+            return NULL;
         }
         if (!p->lchild && !p->rchild)
         {
             if (p == root)
             {
-                root = nullptr;
+                root = NULL;
             }
             delete p;
-            return nullptr;
+            return NULL;
         }
         if (key < p->data)
         {

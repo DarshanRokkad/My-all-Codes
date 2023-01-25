@@ -15,7 +15,7 @@ public:
     treeNode(int x)
     {
         data = x;
-        lchild = rchild = nullptr;
+        lchild = rchild = NULL;
     }
 };
 
@@ -27,7 +27,7 @@ private:
 public:
     BinaryTree()
     {
-        root = nullptr;
+        root = NULL;
     }
 
     // this will create a binary tree until user gives -1 for the nodes
@@ -165,7 +165,6 @@ public:
         {
             if (p)
             {
-
                 st.push(p);
                 p = p->lchild;
             }
@@ -203,7 +202,7 @@ public:
                 else
                 {
                     cout << ((treeNode *)(-(long long)p))->data << " ";
-                    p = nullptr;
+                    p = NULL;
                 }
             }
         }

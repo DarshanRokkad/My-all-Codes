@@ -1,76 +1,73 @@
-#include<iostream>
+#include <iostream>
 #include <string>
 using namespace std;
-bool patternFound;  
+bool patternFound;
 
-class MyClass {
+class MyClass
+{
 
-    private: 
+private:
     string str;
     string replace;
     string replaceWith;
 
-    public:
-
-    void getStrings() {
-
-        cout<<"Enter the string : ";
-        cin>> str;
+public:
+    void getStrings()
+    {
+        cout << "Enter the string : ";
+        cin >> str;
     }
 
-    void getReplaceStrings() {
-        cout<<"Enter the pattern string : ";
-        cin>>replace;
+    void getReplaceStrings()
+    {
+        cout << "Enter the pattern string : ";
+        cin >> replace;
 
-        cout<<"Enter the string to be replaced with: " ;
-        cin>>replaceWith;
+        cout << "Enter the string to be replaced with: ";
+        cin >> replaceWith;
     }
 
     string ptrreplace(int start)
     {
-        string temp , ans;
-        for(int i = start+replace.length();str[i]!='\0';i++)
-        {
-            temp+=str[i];
-        }
-        replaceWith+=temp;
-        for(int i = 0 ; i<start;i++)
+        string temp, ans;
+        for(int i = 0 ;i<start;i++)
         {
             ans+=str[i];
         }
-        ans+=replaceWith;
-        return ans ;
+        ans+=replaceWith;        
+        for(int i = start+replace.length();str[i]!='\0';i++)
+        {
+            ans+=str[i];
+        }
+        return ans;
     }
 
-    string patternReplace() {
-
-         // loop to traverse through the string: 
-        for(int i = 0; i<str.length(); i++) {
-
+    string patternReplace()
+    {
+        patternFound = false ;
+        // loop to traverse through the string:
+        for (int i = 0; i < str.length()-replace.length(); i++)
+        {
             string temp = "";
-
-            // created a check to prevent the index out of bound
-            if(i > str.length() - replace.length()) {
-                break;
+            // inner loop to find the pattern in the string:
+            for (int j = i; j < replace.length() + i; j++)
+            {
+                temp = temp + str[j];
             }
-
-            // inner loop to find the pattern in the string: 
-            for(int j = i; j< replace.length() + i; j++) {
-                temp = temp + str[j];            
-            }
-            // checks the pattern matching: 
-            if(temp == replace) {
-
+            // checks the pattern matching:
+            if (temp == replace)
+            {
                 patternFound = true;
                 str = ptrreplace(i);
-            } 
-  
+                break;
+            }
         }
         return str;
     }
 };
 
-int main() {
+int main()
+{
 
     MyClass c1;
 
@@ -79,13 +76,15 @@ int main() {
 
     string result = c1.patternReplace();
 
-    if(patternFound) {
+    if (patternFound)
+    {
 
-        cout<<"Edited string is:  " <<result<<endl;
+        cout << "Edited string is:  " << result << endl;
+    }
+    else
+    {
 
-    } else {
-
-        cout<<"No such string is found."<<endl;
+        cout << "No such string is found." << endl;
     }
     return 0;
 }

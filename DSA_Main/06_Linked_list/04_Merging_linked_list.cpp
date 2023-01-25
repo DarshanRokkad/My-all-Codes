@@ -11,13 +11,13 @@ struct node *create(int a[], int n)
 {
     struct node *p = new struct node;
     p->data = a[0];
-    p->next = nullptr;
+    p->next = NULL;
     struct node *head = p;
     for (int i = 1; i < n; i++)
     {
         struct node *t = new struct node;
         t->data = a[i];
-        t->next = nullptr;
+        t->next = NULL;
         p->next = t;
         p = p->next;
     }
@@ -34,13 +34,13 @@ struct node *merging(struct node *first, struct node *second)
     {
         last = result_head = first;
         first = first->next;
-        last->next = nullptr;
+        last->next = NULL;
     }
     else
     {
         last = result_head = second;
         second = second->next;
-        last->next = nullptr;
+        last->next = NULL;
     }
     // to link the remaining linked list
     while (first && second)
@@ -50,17 +50,17 @@ struct node *merging(struct node *first, struct node *second)
             last->next = first;
             last = last->next;
             first = first->next;
-            last->next = nullptr;
+            last->next = NULL;
         }
         else
         {
             last->next = second;
             last = last->next;
             second = second->next;
-            last->next = nullptr;
+            last->next = NULL;
         }
     }
-    // if(first!=nullptr)
+    // if(first!=NULL)
     if (first)
     {
         last->next = first;
@@ -74,7 +74,7 @@ struct node *merging(struct node *first, struct node *second)
 
 void display(struct node *p)
 {
-    while (p != nullptr)
+    while (p != NULL)
     {
         cout << p->data << " ";
         p = p->next;
