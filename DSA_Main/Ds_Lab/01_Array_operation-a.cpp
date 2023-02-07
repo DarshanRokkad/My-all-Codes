@@ -16,7 +16,17 @@ public:
         a = new int[m];
         while (1)
         {
-            int choice = menu();
+            cout << endl;
+            cout << "***** Array operations *****" << endl;
+            cout << "1. Create the array ." << endl;
+            cout << "2. Display the array . " << endl;
+            cout << "3. Insert the element of the array ." << endl;
+            cout << "4. Delete the element from an array ." << endl;
+            cout << "5. <<< Exit >>>" << endl;
+            int choice;
+            cout << "Enter the choice : ";
+            cin >> choice;
+            cout << endl;
             switch (choice)
             {
             case 1:
@@ -35,22 +45,6 @@ public:
                 exit(0);
             }
         }
-    }
-    int menu()
-    {
-        cout << endl;
-        cout << "***** Array operations *****" << endl;
-        cout << "1. Create the array ." << endl;
-        cout << "2. Display the array . " << endl;
-        cout << "3. Insert the element of the array ." << endl;
-        cout << "4. Delete the element from an array ." << endl;
-        cout << "5. <<< Exit >>>" << endl;
-        int choice;
-        cout << endl;
-        cout << "Enter the choice : ";
-        cin >> choice;
-        cout << endl;
-        return choice;
     }
     void create()
     {
@@ -93,7 +87,7 @@ public:
                 int ele;
                 cout << "Enter the element you need to insert : ";
                 cin >> ele;
-                int i =  size;
+                int i = size;
                 for (; i > pos; i--)
                 {
                     a[i] = a[i - 1];

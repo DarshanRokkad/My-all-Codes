@@ -19,7 +19,9 @@
         "utility": "cpp",
         "valarray": "cpp",
         "new": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "complex": "cpp",
+        "iomanip": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

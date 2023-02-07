@@ -1,6 +1,6 @@
 package multithreading;
 
-class MyData
+class MyDataa
 {
 	synchronized void display(String str)
 	{
@@ -11,10 +11,10 @@ class MyData
 	}
 }
 
-class Thread1 extends Thread 
+class Thread11 extends Thread 
 {
-	MyData d;
-	Thread1(MyData data)
+	MyDataa d;
+	Thread11(MyDataa data)
 	{
 		d = data ;
 	}
@@ -24,10 +24,10 @@ class Thread1 extends Thread
 	}
 }
 
-class Thread2 extends Thread 
+class Thread22 extends Thread 
 {
-	MyData da;
-	Thread2(MyData data)
+	MyDataa da;
+	Thread22(MyDataa data)
 	{
 		da = data ;
 	}
@@ -37,12 +37,12 @@ class Thread2 extends Thread
 	}
 }
 
-public class Sychronization {
+public class Sychronizationprogram {
 	public static void main(String args[])
 	{
-		MyData d = new MyData();
-		Thread1 t1 = new Thread1(d);
-		Thread2 t2 = new Thread2(d);
+		MyDataa d = new MyDataa();
+		Thread11 t1 = new Thread11(d);
+		Thread22 t2 = new Thread22(d);
 		t1.start();
 		t2.start();
 	}

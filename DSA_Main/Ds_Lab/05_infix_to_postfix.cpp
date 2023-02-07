@@ -66,11 +66,10 @@ public:
             }
             else if (infix[i] == ')')
             {
-                while ((st.top() != '(') && (!st.empty()))
+                while ((st.top() != '(') && (st.empty()))
                 {
-                    char temp = st.top();
+                    postfix +=st.top();
                     st.pop();
-                    postfix += temp;
                 }
                 if (st.top() == '(')
                 {
@@ -79,7 +78,7 @@ public:
             }
             else if (isOperator(infix[i]))
             {
-                if (st.empty())
+                if (!st.empty())
                 {
                     st.push(infix[i]);
                 }
@@ -107,9 +106,8 @@ public:
         }
         while(!st.empty())
         {
-            char ch = st.top();
+            postfix += st.top();
             st.pop();
-            postfix += ch ;
         }
     }
 };

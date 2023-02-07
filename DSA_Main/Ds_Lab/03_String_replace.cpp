@@ -1,90 +1,63 @@
 #include <iostream>
-#include <string>
 using namespace std;
-bool patternFound;
 
-class MyClass
+class Pattern_replace
 {
-
 private:
-    string str;
-    string replace;
-    string replaceWith;
+    string str, rep, ptr, ans;
 
 public:
-    void getStrings()
+    Pattern_replace()
+    {
+        input();
+        replace();
+    }
+    void input()
     {
         cout << "Enter the string : ";
         cin >> str;
+        cout << "Enter the pattern : ";
+        cin >> ptr;
+        cout << "Enter the string that has to be replaced : ";
+        cin >> rep;
     }
-
-    void getReplaceStrings()
+    void replace()
     {
-        cout << "Enter the pattern string : ";
-        cin >> replace;
-
-        cout << "Enter the string to be replaced with: ";
-        cin >> replaceWith;
-    }
-
-    string ptrreplace(int start)
-    {
-        string temp, ans;
-        for(int i = 0 ;i<start;i++)
+        bool flag = false;
+        int i = 0;
+        while (str[i] != '\0')
         {
-            ans+=str[i];
-        }
-        ans+=replaceWith;        
-        for(int i = start+replace.length();str[i]!='\0';i++)
-        {
-            ans+=str[i];
-        }
-        return ans;
-    }
-
-    string patternReplace()
-    {
-        patternFound = false ;
-        // loop to traverse through the string:
-        for (int i = 0; i < str.length()-replace.length(); i++)
-        {
-            string temp = "";
-            // inner loop to find the pattern in the string:
-            for (int j = i; j < replace.length() + i; j++)
+            int j = 0;
+            while (str[i + j] == ptr[j] && ptr[j] != '\0')
             {
-                temp = temp + str[j];
+                j++;
             }
-            // checks the pattern matching:
-            if (temp == replace)
+            if (ptr[j] == '\0')
             {
-                patternFound = true;
-                str = ptrreplace(i);
-                break;
+                flag = true;
+                ans += rep;
+                i = i + (j - 1);
             }
+            else
+            {
+                ans += str[i];
+            }
+            i++;
         }
-        return str;
+        if (flag)
+        {
+            cout << "Edited string : " << ans << endl;
+        }
+        else
+        {
+            cout << "Pattern donot exist . " << endl;
+        }
     }
 };
 
 int main()
 {
+    Pattern_replace p ;
 
-    MyClass c1;
-
-    c1.getStrings();
-    c1.getReplaceStrings();
-
-    string result = c1.patternReplace();
-
-    if (patternFound)
-    {
-
-        cout << "Edited string is:  " << result << endl;
-    }
-    else
-    {
-
-        cout << "No such string is found." << endl;
-    }
-    return 0;
+    return 0 ;
 }
