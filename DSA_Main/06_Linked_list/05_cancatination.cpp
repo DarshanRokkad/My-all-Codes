@@ -11,13 +11,13 @@ struct node *create(int a[], int n)
 {
     struct node *p = new struct node;
     p->data = a[0];
-    p->next = nullptr;
+    p->next = NULL;
     struct node *head = p;
     for (int i = 1; i < n; i++)
     {
         struct node *t = new struct node;
         t->data = a[i];
-        t->next = nullptr;
+        t->next = NULL;
         p->next = t;
         p = p->next;
     }
@@ -28,18 +28,18 @@ struct node *create(int a[], int n)
 struct node *cancati(struct node *first, struct node *second)
 {
     struct node *p = first;
-    while (p->next != nullptr)
+    while (p->next != NULL)
     {
         p = p->next;
     }
     p->next = second;
-    second = nullptr;
+    second = NULL;
     return first;
 }
 
 void display(struct node *p)
 {
-    while (p != nullptr)
+    while (p != NULL)
     {
         cout << p->data << " ";
         p = p->next;

@@ -23,7 +23,7 @@ public:
         branch = b;
         sem = s;
         phone_number = p;
-        next = nullptr;
+        next = NULL;
     }
 };
 
@@ -31,12 +31,10 @@ class student
 {
 private:
     node *head;
-    node *last;
-
 public:
     student()
     {
-        last = head = nullptr;
+        head = NULL;
         while (1)
         {
             menu();
@@ -86,74 +84,68 @@ public:
         cout << "Phone number : ";
         cin >> phone_number;
         node *temp = new node(usn, name, branch, sem, phone_number);
-        if (head == nullptr)
+        if (head == NULL)
         {
-            last = head = temp;
+            head = temp;
         }
         else
         {
-            last->next = temp;
-            last = temp;
+            temp->next = head ;
+            head = temp ;
         }
         cout << "Student is inserted successfully." << endl;
         display();
     }
+
+
     void delete_student()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
-            cout << "There is no student in the list." << endl;
             cout << "Underflow condition." << endl;
         }
         else
         {
             cout << "Enter the name of the student that has to be deleted: ";
-            string n;
-            cin >> n;
+            string na;
+            cin >> na;
             node *temp = head;
-            node *tail = nullptr;
+            node *tail = NULL;
             // if the student to be delted is the first one then below
-            if (head->name == n)
+            if (head->name == na)
             {
-                cout << "Student " << n << " is deleted successfully." << endl;
+                cout << "Student " << na << " is deleted successfully." << endl;
                 head = head->next;
                 delete temp;
             }
             else
             {
-                while (!(temp->name).compare(n))
+                while (temp!=NULL && (temp->name!=na))
                 {
                     tail = temp;
                     temp = temp->next;
-                    if (temp == nullptr)
-                        break;
                 }
                 // if student is found then the below if condition will executes
-                if (temp != nullptr)
+                if (temp != NULL)
                 {
                     tail->next = temp->next;
                     delete temp;
-                    temp = head;
-                    // now we have to set the last node pointer
-                    while (temp->next == nullptr)
-                    {
-                        temp = temp->next;
-                    }
-                    last = temp;
-                    cout << "Student " << n << " is deleted successfully." << endl;
+                    cout << "Student " << na << " is deleted successfully." << endl;
                 }
                 // if student is not found
                 else
                 {
-                    cout << "There is no student with name " << n << " in the list." << endl;
+                    cout << "There is no student with name " << na << " in the list." << endl;
                 }
             }
             display();
         }
     }
+
+
     void display()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             cout << "No student is present in the list . " << endl;
         }
@@ -162,9 +154,10 @@ public:
             int c = 0;
             cout << "**Linked list**" << endl;
             node *temp = head;
+            cout << "Student : ";
             while (temp)
             {
-                cout << "Student " << temp->name;
+                cout << temp->name;
                 c++;
                 temp = temp->next;
                 if (temp)

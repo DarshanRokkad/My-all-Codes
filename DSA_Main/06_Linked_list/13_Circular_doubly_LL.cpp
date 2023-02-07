@@ -11,7 +11,7 @@ public:
     node(int x)
     {
         data = x;
-        next = prev = nullptr;
+        next = prev = NULL;
     }
 };
 
@@ -24,7 +24,7 @@ public:
 
     DoublyCircluarLL()
     {
-        head = nullptr;
+        head = NULL;
     }
 
     // insert the node before the head 
@@ -32,7 +32,7 @@ public:
     {
         cout << x << " is inserted at the begining." << endl;
         node *temp = new node(x);
-        if (head == nullptr)
+        if (head == NULL)
         {
             head = temp;
             head->next = head;
@@ -54,7 +54,7 @@ public:
     {
         cout << x << " is inserted at the end." << endl;
         node *temp = new node(x);
-        if (head == nullptr)
+        if (head == NULL)
         {
             head = temp;
             head->next = head;
@@ -73,7 +73,7 @@ public:
     // delete the first node 
     void deleteFirst()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             cout << "Linked list empty." << endl;
         }
@@ -81,7 +81,7 @@ public:
         {
             cout << "Deleted first node." << endl;
             delete head;
-            head = nullptr;
+            head = NULL;
         }
         else
         {
@@ -98,7 +98,7 @@ public:
     // delete the last node
     void deleteLast()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             cout << "Linked list empty." << endl;
         }
@@ -106,7 +106,7 @@ public:
         {
             cout << "Deleted last node." << endl;
             delete head;
-            head = nullptr;
+            head = NULL;
         }
         else
         {
@@ -122,7 +122,7 @@ public:
     // display the node 
     void display()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             cout << "Circular doubly linked list empty." << endl;
         }

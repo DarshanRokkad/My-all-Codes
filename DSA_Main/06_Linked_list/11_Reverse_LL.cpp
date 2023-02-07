@@ -10,7 +10,7 @@ public:
     node(int x)
     {
         data = x;
-        next = nullptr;
+        next = NULL;
     }
 };
 
@@ -20,21 +20,21 @@ public:
     node *head;
     singlyLinkedlist()
     {
-        head = nullptr;
+        head = NULL;
     }
     // This is inserting an element in the linear linked at the end 
     void insert(int x)
     {
         node *temp = new node(x);
         cout << x << " is inserted to linked list." << endl;
-        if (head == nullptr)
+        if (head == NULL)
         {
             head = temp;
         }
         else
         {
             node *p = head;
-            while (p->next != nullptr)
+            while (p->next != NULL)
             {
                 p = p->next;
             }
@@ -45,7 +45,7 @@ public:
     // Display the linear linked list 
     void display()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             cout << "Linked list is empty." << endl;
         }
@@ -81,7 +81,7 @@ public:
     {
         node *f , *s  , *t ;
         f = head ;
-        s = t = nullptr ;
+        s = t = NULL ;
         while(f)
         {
             t = s ; 
@@ -104,7 +104,7 @@ int main()
     {
         s.insert(a[i]);
     }
-    s.rreverse(s.head, nullptr);
+    s.rreverse(s.head, NULL);
     cout<<"Linked list is reversed ."<<endl;
     s.display();
     s.reverse();

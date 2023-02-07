@@ -1,14 +1,14 @@
 // lower triangle matrix => row major matrix
 #include <iostream>
 using namespace std;
-class Upper_tri
+class lower_tri
 {
 private:
     int n;
     int *a;
 
 public:
-    Upper_tri(int n)
+    lower_tri(int n)
     {
         this->n = n;
         a = new int[n * (n + 1) / 2];
@@ -34,44 +34,38 @@ public:
         }
     }
 
-    friend ostream &operator<<(ostream &o, Upper_tri &m);
-    friend istream &operator>>(istream &o, Upper_tri &m);
+    friend ostream &operator<<(ostream &o, lower_tri &m);
+    friend istream &operator>>(istream &o, lower_tri &m);
 
-    ~Upper_tri()
+    ~lower_tri()
     {
         delete[] a;
     }
 };
 
-ostream &operator<<(ostream &o, Upper_tri &m)
+ostream &operator<<(ostream &o, lower_tri &m)
 {
     for (int i = 1; i <= m.n; i++)
     {
         for (int j = 1; j <= m.n; j++)
         {
-            if (i >= j)
-            {
-                o << m.a[(i* (i - 1) / 2) + (j - 1)]  << ' ';
-            }
-            else
-            {
-                o << 0 << " ";
-            }
+            o << m.get(i, j) << " ";
         }
         cout << endl;
     }
     return o;
 }
 
-istream &operator>>(istream &o, Upper_tri &m)
+istream &operator>>(istream &o, lower_tri &m)
 {
     for (int i = 1; i <= m.n; i++)
     {
         for (int j = 1; j <= m.n; j++)
         {
-            int x ;
-            cin>>x ;
-            m.set(i,j,x);
+            cout << "Enter the elements of the at position [" << i << " , " << j << "] : ";
+            int x;
+            cin >> x;
+            m.set(i, j, x);
         }
         cout << endl;
     }
@@ -80,8 +74,10 @@ istream &operator>>(istream &o, Upper_tri &m)
 
 int main()
 {
-    Upper_tri d(4);
-    cin>>d;
+    cout<<"Enter the value of n : ";
+    int n ; cin>>n ; 
+    lower_tri d(n);
+    cin >> d;
 
     cout << d;
 

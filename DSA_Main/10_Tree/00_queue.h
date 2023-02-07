@@ -8,7 +8,7 @@ public:
     nodeq(t x)
     {
         data = x;
-        next = nullptr;
+        next = NULL;
     }
 };
 
@@ -17,8 +17,8 @@ class MyQueue
 {
 private:
     int size;
-    nodeq<T> *head = nullptr;
-    nodeq<T> *last = nullptr;
+    nodeq<T> *head = NULL;
+    nodeq<T> *last = NULL;
 
 public:
     MyQueue()
@@ -54,7 +54,7 @@ public:
             head = head->next;
             delete temp;
             if (!head)
-                last = nullptr;
+                last = NULL;
             size--;
             return data;
         }

@@ -1,6 +1,5 @@
 // Stack operation on the books
 #include <iostream>
-#include <string>
 using namespace std;
 
 class Book
@@ -12,10 +11,6 @@ private:
     float price;
 
 public:
-    Book()
-    {
-        Isbn = "";
-    }
 
     // for Taking input to set book object data members
     void input()
@@ -57,11 +52,11 @@ public:
     {
         Capacity = n;
         top = -1;
-        B = new Book[Capacity];
+        B = new Book[n];
     }
 
     // Pushing book to stack
-    void push(Book newbook)
+    void push(Book nb)
     {
         if (top == (Capacity - 1))
         {
@@ -69,7 +64,7 @@ public:
         }
         else
         {
-            B[++top] = newbook;
+            B[++top] = nb;
             cout << "Book is pushed to stack successfully." << endl;
         }
     }
@@ -129,9 +124,9 @@ int main()
         {
         case 1:
         {
-            Book newBook;
-            newBook.input();
-            S.push(newBook);
+            Book bn;
+            bn.input();
+            S.push(bn);
             S.display();
             break;
         }

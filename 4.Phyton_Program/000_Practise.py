@@ -1,2 +1,0 @@
-print("darshan")
-print(" rokkad")

@@ -34,14 +34,15 @@ public class Class_Student {
 			System.out.println(it.next());
 		}
 		
+		System.out.print("Student name match : ");
 		String key = "Darshan";
 		it = al.iterator();
 		while(it.hasNext())
 		{
-			Student s = it.next();
+			Student s = (Student)it.next();
 			if(s.name==key)
 			{
-				System.out.println(it.next());
+				System.out.println(s);
 			}
 		}
 	}

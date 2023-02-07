@@ -8,6 +8,7 @@ int main()
     // this jagged array pointer hold the base address of the 2 array 
     int *jagged[2]={r1,r2};
     int size[]={3,1};
+    
     cout<<"Jagged array is : "<<endl; 
     for(int i = 0 ;i<2 ;i++)
     {

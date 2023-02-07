@@ -9,7 +9,7 @@ public:
     node(int x)
     {
         data = x;
-        next = nullptr;
+        next = NULL;
     }
 };
 
@@ -22,7 +22,7 @@ private:
 public:
     circularLL()
     {
-        head = nullptr;
+        head = NULL;
     }
 
     // creating the circular linked list
@@ -39,7 +39,7 @@ public:
     {
         cout << x << " is inserted begining." << endl;
         node *temp = new node(x);
-        if (head == nullptr)
+        if (head == NULL)
         {
             head = temp;
             head->next = head;
@@ -63,7 +63,7 @@ public:
     {
         cout << x << " is inserted end." << endl;
         node *temp = new node(x);
-        if (head == nullptr)
+        if (head == NULL)
         {
             head = temp;
             head->next = head;
@@ -86,14 +86,14 @@ public:
     // Deleting first node form circular linked list
     void deleteFirst()
     {
-        if(head==nullptr)
+        if(head==NULL)
         {
             cout<<"Linked list empty."<<endl;
         }
         if (head->next == head)
         {
             delete head;
-            head = nullptr;
+            head = NULL;
         }
         else
         {
@@ -110,11 +110,11 @@ public:
     // Deleting last node form circular linked list
     void deleteLast()
     {
-        if(head==nullptr)
+        if(head==NULL)
         {
             cout<<"Linked list empty."<<endl;
         }
-        if (head == nullptr)
+        if (head == NULL)
         {
             cout << "Circular linked list empty." << endl;
         }
@@ -122,7 +122,7 @@ public:
         {
             cout << "Deleted last node." << endl;
             delete head;
-            head = nullptr;
+            head = NULL;
         }
         else
         {
@@ -179,7 +179,7 @@ public:
     // displaying the circular linked list
     void display()
     {
-        if (head == nullptr)
+        if (head == NULL)
         {
             cout << "Circular linked list is empty." << endl;
         }

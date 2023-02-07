@@ -7,7 +7,7 @@ class node
 public:
     int data;
     node *next;
-} *head = nullptr, *last = nullptr;
+} *head = NULL, *last = NULL;
 
 class MyStack
 {
@@ -26,7 +26,7 @@ public:
     {
         node *n = new node();
         n->data = x;
-        n->next = nullptr;
+        n->next = NULL;
         return n;
     }
 
@@ -61,20 +61,20 @@ public:
         }
         else
         {
-            node *p = head, *q = nullptr;
-            while (p->next != nullptr)
+            node *p = head, *q = NULL;
+            while (p->next != NULL)
             {
                 q = p;
                 p = p->next;
             }
             if (p != head)
             {
-                q->next = nullptr;
+                q->next = NULL;
                 last = q;
             }
             else
             {
-                head = nullptr;
+                head = NULL;
             }
             int res = p->data;
             delete p;
@@ -98,7 +98,7 @@ public:
 
     bool isEmpty()
     {
-        return (head == nullptr);
+        return (head == NULL);
     }
 
     int size()

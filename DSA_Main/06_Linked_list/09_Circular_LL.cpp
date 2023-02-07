@@ -6,7 +6,7 @@ struct node
     struct node *prev;
     int data;
     struct node *next;
-} *head = nullptr;
+} *head = NULL;
 
 void create(int a[], int n)
 {
@@ -43,7 +43,7 @@ int length()
 
 void display()
 {
-    if (head == nullptr)
+    if (head == NULL)
     {
         cout << "Linked list not created " << endl
              << endl;
