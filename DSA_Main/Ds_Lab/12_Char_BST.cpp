@@ -1,8 +1,7 @@
 /*
 Design a C++ program that uses functions to perform the following:
-a. Create a binary search tree of integers.
-b. Search for an integer key in the above binary search tree non recursively.
-c. Search for an integer key in the above binary search tree recursively.
+a. Create a binary search tree of characters.
+b. Traverse the above Binary search tree recursively in preorder, in order and post order.
 */
 // Binary search tree
 #include <iostream>
@@ -11,10 +10,10 @@ using namespace std;
 class treeNode
 {
 public:
-    int data;
+    char data;
     treeNode *lchild;
     treeNode *rchild;
-    treeNode(int x)
+    treeNode(char x)
     {
         data = x;
         lchild = rchild = NULL;
@@ -32,12 +31,12 @@ public:
         root = NULL;
         while (1)
         {
-            cout << endl
-                 << "BST operation" << endl;
+            cout << endl;
+            cout << "BST Creation and traversal" << endl;
             cout << "1. Create ." << endl;
-            cout << "2. Iterative search ." << endl;
-            cout << "3. Recursive search ." << endl;
-            cout << "4. Display inorder." << endl;
+            cout << "2. Preorder traversal ." << endl;
+            cout << "3. Inorder traversal ." << endl;
+            cout << "4. Postorder traversal." << endl;
             cout << "5. Exit." << endl;
             cout << "Enter chioce : ";
             int c;
@@ -49,13 +48,21 @@ public:
                 break;
             case 2:
                 if (root != NULL)
-                    isearch();
+                {
+                    cout << "Preorder : ";
+                    preorder(root);
+                    cout << endl;
+                }
                 else
                     cout << "There is no tree." << endl;
                 break;
             case 3:
                 if (root != NULL)
-                    rsearch();
+                {
+                    cout << "Inorder : ";
+                    inorder(root);
+                    cout << endl;
+                }
                 else
                     cout << "There is no tree." << endl;
                 break;
@@ -63,7 +70,7 @@ public:
                 if (root != NULL)
                 {
                     cout << "Inorder : ";
-                    rinorder(root);
+                    postorder(root);
                     cout << endl;
                 }
                 else
@@ -80,24 +87,51 @@ public:
     // this will create a binary tree until user gives -1 for the nodes
     void create()
     {
-        int x;
+        char x;
         cout << "Enter the root value : ";
         cin >> x;
         root = new treeNode(x);
-        while (x != -1)
+        while (x != '0')
         {
             cout << "Enter the data to add to the tree : ";
             cin >> x;
-            if (x != -1)
+            if (x != '0')
             {
-                iinsert(x);
+                bool duplicate = false;
+                treeNode *f = root;
+                treeNode *t = NULL;
+                while (f)
+                {
+                    t = f;
+                    if (f->data == x)
+                    {
+                        cout << x << " is already present in the BST." << endl;
+                        duplicate = true;
+                        break;
+                    }
+                    else if (x < f->data)
+                    {
+                        f = f->lchild;
+                    }
+                    else
+                    {
+                        f = f->rchild;
+                    }
+                }
+                f = new treeNode(x);
+                if (!duplicate && x < t->data)
+                {
+                    t->lchild = f;
+                }
+                else if (!duplicate)
+                {
+                    t->rchild = f;
+                }
             }
         }
     }
 
-    // the inorder traversal of a binary search tree
-    // this traversal gives the sorted elements
-    void rinorder(treeNode *p)
+    void inorder(treeNode *p)
     {
         if (!p)
         {
@@ -105,130 +139,40 @@ public:
         }
         else
         {
-            rinorder(p->lchild);
+            inorder(p->lchild);
             cout << p->data << " ";
-            rinorder(p->rchild);
+            inorder(p->rchild);
         }
     }
-
-    // this function search the element the binary search tree and return that node
-    void rsearch()
-    {
-        // recursive binary search
-        cout << "Enter the element to be searched : ";
-        int c;
-        cin >> c;
-        bool result = rsearch(root, c);
-        if (result)
-        {
-            cout << c << " is found." << endl;
-        }
-        else
-        {
-            cout << c << " is not present in the binary search tree." << endl;
-        }
-    }
-    bool rsearch(treeNode *p, int x)
+    void preorder(treeNode *p)
     {
         if (!p)
         {
-            return false;
-        }
-        if (x > p->data)
-        {
-            return rsearch(p->rchild, x);
-        }
-        else if (x < p->data)
-        {
-            return rsearch(p->lchild, x);
-        }
-        return true;
-    }
-
-    // iterative search of a key inside a BST
-    void isearch()
-    {
-        // iterative binary search
-        cout << "Enter the element to be searched : ";
-        int c;
-        cin >> c;
-        bool result = isearch(c);
-        if (result)
-        {
-            cout << c << " is found." << endl;
+            return;
         }
         else
         {
-            cout << c << " is not present in the binary search tree." << endl;
+            cout << p->data << " ";
+            preorder(p->lchild);
+            preorder(p->rchild);
         }
     }
-    bool isearch(int x)
+    void postorder(treeNode *p)
     {
-        treeNode *p = root;
-        while (p && p->data != x)
+        if (!p)
         {
-            if (x < p->data)
-            {
-                p = p->lchild;
-            }
-            else
-            {
-                p = p->rchild;
-            }
-        }
-        if (p)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    // iterative insert of a key
-    void iinsert()
-    {
-        cout << "Enter the element you need to insert : ";
-        int c;
-        cin >> c;
-        iinsert(c);
-        // Inorder traversal of a BST
-        cout << "Inorder traversal : ";
-        rinorder(root);
-        cout << endl;
-    }
-    void iinsert(int key)
-    {
-        treeNode *f = root;
-        treeNode *t = NULL;
-        while (f)
-        {
-            t = f;
-            if (f->data == key)
-            {
-                cout << key << " is already present in the BST." << endl;
-                return;
-            }
-            else if (key < f->data)
-            {
-                f = f->lchild;
-            }
-            else
-            {
-                f = f->rchild;
-            }
-        }
-        f = new treeNode(key);
-        if (key < t->data)
-        {
-            t->lchild = f;
+            return;
         }
         else
         {
-            t->rchild = f;
+            postorder(p->lchild);
+            postorder(p->rchild);
+            cout << p->data << " ";
         }
     }
 };
 
-// sample input : 9 15 5 20 16 8 12 3 6 -1
+// sample input : h s w e a b u e f 0
 
 int main()
 {
