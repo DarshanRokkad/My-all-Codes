@@ -81,11 +81,12 @@ public class Program_5 {
 	public static void main(String args[])
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the value of number 1 and number 2 : ");
+		System.out.print("Enter the value of number 1 : ");
 		int a = sc.nextInt();
+		System.out.print("Enter the value of number 2 : ");
 		int b = sc.nextInt();
 		sc.close();
-		Additional_Feature af = new Additional_Feature(a,b);
+		Calculator af = new Additional_Feature(a,b);
 		af.displayResults();
 	}
 }

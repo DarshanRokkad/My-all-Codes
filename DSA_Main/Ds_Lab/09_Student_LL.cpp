@@ -12,10 +12,13 @@ using namespace std;
 
 class node
 {
-public:
+private:
     string usn, name, branch;
     int sem, phone_number;
     node *next;
+    friend class student;
+
+public:
     node(string u, string n, string b, int s, int p)
     {
         usn = u;
@@ -31,6 +34,7 @@ class student
 {
 private:
     node *head;
+
 public:
     student()
     {
@@ -90,13 +94,12 @@ public:
         }
         else
         {
-            temp->next = head ;
-            head = temp ;
+            temp->next = head;
+            head = temp;
         }
         cout << "Student is inserted successfully." << endl;
         display();
     }
-
 
     void delete_student()
     {
@@ -120,7 +123,7 @@ public:
             }
             else
             {
-                while (temp!=NULL && (temp->name!=na))
+                while (temp != NULL && (temp->name != na))
                 {
                     tail = temp;
                     temp = temp->next;
@@ -141,7 +144,6 @@ public:
             display();
         }
     }
-
 
     void display()
     {

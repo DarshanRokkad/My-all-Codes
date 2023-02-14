@@ -137,7 +137,10 @@ public:
 int main()
 {
     cout << "**Circular queue**" << endl;
-    MyQueue<char> q(5);
+    cout << "Enter the size of Queue : ";
+    int size;
+    cin >> size;
+    MyQueue<char> q(size);
 
     return 0;
 }

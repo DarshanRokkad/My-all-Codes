@@ -60,6 +60,7 @@ void insert(int x, int ind)
 {
     if (ind < 0 || ind > length())
     {
+        cout << "Index out of range . " << endl;
         return;
     }
     struct node *t, *p;
@@ -121,25 +122,25 @@ void delete_node(int pos)
         {
             p = p->next;
         }
-        p->prev->next=p->next;
-        // if the deleting node is not a last node then 
-        if(p->next)
+        p->prev->next = p->next;
+        // if the deleting node is not a last node then
+        if (p->next)
         {
-            p->next->prev = p  ;
+            p->next->prev = p;
         }
     }
 }
 
 void reverse()
 {
-    struct node *p = head ,*t;
-    while(p!=NULL)
+    struct node *p = head, *t;
+    while (p != NULL)
     {
-        t = p->next ;
+        t = p->next;
         p->next = p->prev;
         p->prev = t;
         p = p->prev;
-        if(p!=NULL && p->next==NULL)
+        if (p != NULL && p->next == NULL)
         {
             head = p;
         }
@@ -151,39 +152,41 @@ int main()
     int arr[] = {2, 3, 5, 7, 3, 8};
     int size = sizeof(arr) / sizeof(arr[0]);
     display();
-    cout<<endl;
+    cout << endl;
 
     // creating the doubly linked list
     create(arr, size);
-    cout<<"Creating a doubly linked list "<<endl;
+    cout << "Creating a doubly linked list " << endl;
     cout << "Doubly linked list : ";
     display();
-    cout << "Length of the doubly linked list : " << length() << endl<<endl;
+    cout << "Length of the doubly linked list : " << length() << endl
+         << endl;
 
-    // Inserting nodes in the doubly linked list 
-    cout<<"Inserting a doubly linked list "<<endl;
+    // Inserting nodes in the doubly linked list
+    cout << "Inserting a doubly linked list " << endl;
     insert(56, 0);
     insert(34, 4);
     insert(1, 8);
     cout << "Doubly linked list : ";
     display();
     cout << "Length of the doubly linked list : " << length() << endl;
-    cout<<endl;
+    cout << endl;
 
     // deleting a node in a doubly linked list
-    cout<<"Deleting a node from a doubly linked list"<<endl;
+    cout << "Deleting a node from a doubly linked list" << endl;
     delete_node(5);
     delete_node(1);
     cout << "Doubly linked list : ";
     display();
     cout << "Length of the doubly linked list : " << length() << endl;
-    cout<<endl;
+    cout << endl;
 
-    // reversing a doubly linked list 
-    cout<<"Reversing a doubly linked list "<<endl<<endl;
+    // reversing a doubly linked list
+    cout << "Reversing a doubly linked list " << endl
+         << endl;
     reverse();
     cout << "Doubly linked list : ";
-    display();    
+    display();
 
     return 0;
 }
