@@ -17,12 +17,12 @@ public:
         while (1)
         {
             cout << endl;
-            cout << "***** Array operations *****" << endl;
+            cout << "Array operations" << endl;
             cout << "1. Create the array ." << endl;
             cout << "2. Display the array . " << endl;
             cout << "3. Insert the element of the array ." << endl;
             cout << "4. Delete the element from an array ." << endl;
-            cout << "5. <<< Exit >>>" << endl;
+            cout << "5. Exit." << endl;
             int choice;
             cout << "Enter the choice : ";
             cin >> choice;

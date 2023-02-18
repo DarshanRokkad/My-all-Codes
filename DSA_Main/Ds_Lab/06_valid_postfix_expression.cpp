@@ -43,11 +43,15 @@ public:
         case '/':
             result = x / y;
             break;
-        case '^':
+        case '$':
             result = pow(x,y);
             break;
         }
         return result;
+    }
+    bool isOperator(char c)
+    {
+        return (c == '+' || c == '-' || c == '*' || c == '/' || c == '$');
     }
     int evaluate()
     {
@@ -58,7 +62,7 @@ public:
             {
                 st.push((postfix[i] - '0'));
             }
-            else if (postfix[i] == '+' || postfix[i] == '-' || postfix[i] == '*' || postfix[i] == '/' || postfix[i] == '^')
+            else if (isOperator(postfix[i]))
             {
                 int op1 = st.top();
                 st.pop();

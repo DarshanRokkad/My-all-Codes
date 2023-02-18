@@ -17,11 +17,12 @@ public:
     {
         cout<<"Enter book details.."<<endl;
         cout << "Enter the ISBN of the book : ";
-        cin >> Isbn;
+        getline(cin,Isbn);
+        getline(cin,Isbn);
         cout << "Enter the Title of the book : ";
-        cin >> title;
+        getline(cin,title);
         cout << "Enter the Author of the book : ";
-        cin >> author;
+        getline(cin,author);
         cout << "Enter the Price of the book : ";
         cin >> price;
     }
@@ -93,7 +94,7 @@ public:
         }
         else
         {
-            cout << "**Stack**" << endl;
+            cout << "Stack" << endl;
             for (int i = top; i >= 0; i--)
             {
                 cout << "Book " << (i + 1) << endl;

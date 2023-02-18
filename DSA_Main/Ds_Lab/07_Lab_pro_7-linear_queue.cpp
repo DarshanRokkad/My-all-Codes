@@ -6,7 +6,6 @@ c. Demonstrate Overflow and Underflow situations on Linear Queue
 d. Display the status of Linear Queue */
 #include <iostream>
 using namespace std;
-#define MAX 3
 class MyQueue
 {
 private:
@@ -113,7 +112,10 @@ public:
 int main()
 {
     cout << "*** Linear queue ***" << endl;
-    MyQueue(MAX);
+    int n ;
+    cout << "Enter the maximum size of the queue : ";
+    cin >> n;
+    MyQueue q(n);
 
     return 0;
 }

@@ -28,18 +28,15 @@ public:
     void input()
     {
         cout << "Enter a Infix Expression : ";
-        getline(cin,infix);
+        getline(cin, infix);
     }
     bool isOperator(char c)
     {
-        if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^')
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (c == '+' || c == '-' || c == '*' || c == '/' || c == '^');
+    }
+    bool isOperand(char ch)
+    {
+        return ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9'));
     }
     int precedence(char c)
     {
@@ -56,7 +53,7 @@ public:
     {
         for (int i = 0; i < infix.length(); i++)
         {
-            if ((infix[i] >= 'A' && infix[i] <= 'Z') || (infix[i] >= 'a' && infix[i] <= 'z'))
+            if (isOperand(infix[i]))
             {
                 postfix += infix[i];
             }
@@ -66,45 +63,24 @@ public:
             }
             else if (infix[i] == ')')
             {
-                while ((st.top() != '(') && (st.empty()))
+                while ((st.top() != '('))
                 {
-                    postfix +=st.top();
+                    postfix += st.top();
                     st.pop();
                 }
-                if (st.top() == '(')
-                {
-                    st.pop();
-                }
+                st.pop();
             }
             else if (isOperator(infix[i]))
             {
-                if (!st.empty())
+                while ((!st.empty()) && (precedence(infix[i]) <= precedence(st.top())))
                 {
-                    st.push(infix[i]);
+                    postfix += st.top();
+                    st.pop();
                 }
-                else
-                {
-                    if (precedence(infix[i]) > precedence(st.top()))
-                    {
-                        st.push(infix[i]);
-                    }
-                    else if ((precedence(infix[i]) == precedence(st.top())) && (infix[i] == '^'))
-                    {
-                        st.push(infix[i]);
-                    }
-                    else
-                    {
-                        while ((!st.empty()) && (precedence(infix[i]) <= precedence(st.top())))
-                        {
-                            postfix += st.top();
-                            st.pop();
-                        }
-                        st.push(infix[i]);
-                    }
-                }
+                st.push(infix[i]);
             }
         }
-        while(!st.empty())
+        while (!st.empty())
         {
             postfix += st.top();
             st.pop();

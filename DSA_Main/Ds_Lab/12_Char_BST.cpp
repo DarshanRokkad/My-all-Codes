@@ -69,7 +69,7 @@ public:
             case 4:
                 if (root != NULL)
                 {
-                    cout << "Inorder : ";
+                    cout << "Postorder : ";
                     postorder(root);
                     cout << endl;
                 }
