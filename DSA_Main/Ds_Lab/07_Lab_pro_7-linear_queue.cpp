@@ -52,7 +52,6 @@ public:
             exit(0);
         default:
             cout << "Invalid choice." << endl;
-            cout << "Please enter valid choice." << endl;
         }
     }
     // inserting element into linear queue i.e inserting at the end of the array
@@ -60,7 +59,6 @@ public:
     {
         if (arr_size == max_size)
         {
-            cout << "Linear queue is full." << endl;
             cout << "Overflow condition." << endl;
         }
         else
@@ -75,7 +73,6 @@ public:
     {
         if (arr_size == 0)
         {
-            cout << "Linear queue is empty." << endl;
             cout << "Underflow condition." << endl;
         }
         else

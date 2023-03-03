@@ -96,6 +96,7 @@ public:
             if (p->name == name)
             {
                 ans = p;
+                break ;
             }
             p = p->next;
         }
