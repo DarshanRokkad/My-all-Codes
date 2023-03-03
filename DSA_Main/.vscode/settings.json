@@ -21,7 +21,8 @@
         "new": "cpp",
         "ratio": "cpp",
         "complex": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "charconv": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

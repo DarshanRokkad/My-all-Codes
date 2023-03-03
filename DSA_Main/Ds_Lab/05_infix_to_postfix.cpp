@@ -32,7 +32,7 @@ public:
     }
     bool isOperator(char c)
     {
-        return (c == '+' || c == '-' || c == '*' || c == '/' || c == '^');
+        return (c == '+' || c == '-' || c == '*' || c == '/' || c == '$');
     }
     bool isOperand(char ch)
     {
@@ -40,7 +40,7 @@ public:
     }
     int precedence(char c)
     {
-        if (c == '^')
+        if (c == '$')
             return 3;
         else if (c == '*' || c == '/')
             return 2;

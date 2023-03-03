@@ -28,6 +28,7 @@ public:
     void menu()
     {
         cout << endl;
+        cout << "Menu" << endl;
         cout << "1. Insert an character in the Circular queue." << endl;
         cout << "2. Delete an Character in the Circular queue." << endl;
         cout << "3. Display Circular queue ." << endl;
@@ -53,7 +54,6 @@ public:
             exit(0);
         default:
             cout << "Invalid choice." << endl;
-            cout << "Please enter valid choice." << endl;
         }
     }
 
