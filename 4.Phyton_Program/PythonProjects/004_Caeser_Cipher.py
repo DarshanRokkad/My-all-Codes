@@ -13,7 +13,7 @@ def ciper(text, shiftAmount, direction):
 
 while True:
     print('----------------------')
-    direction = input("Enter 'encode' to Encode the text and 'decode' to Decode the text : ")
+    direction = input("Enter 'encode' to Encode the text and 'decode' to Decode the text : ").lower()
     if direction != 'encode' and direction != 'decode':
         break 
     text = input(f"Enter the text to be {direction}d : ").lower()
